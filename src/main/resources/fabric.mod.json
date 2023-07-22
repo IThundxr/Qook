@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "scooper",
+  "version": "${version}",
+  "name": "scooper",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/ithundxr/scooper"
+  },
+  "license": "MIT",
+  "icon": "assets/scooper/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "dev.ithundxr.scooper.client.ScooperClient"
+    ],
+    "main": [
+      "dev.ithundxr.scooper.Scooper"
+    ]
+  },
+  "mixins": [
+    "scooper.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
