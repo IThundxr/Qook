@@ -1,3 +1,9 @@
 {
-  "block.qook.blue_blossom_leaves": "Frosty Blossom Leaves"
+  "block.qook.blossom_log": "Blossom Log",
+  "block.qook.blue_blossom_leaves": "Frosty Blossom Leaves",
+  "block.qook.lavender_blossom_leaves": "Serene Blossom Leaves",
+  "block.qook.orange_blossom_leaves": "Warm Blossom Leaves",
+  "block.qook.pink_blossom_leaves": "Sweet Blossom Leaves",
+  "block.qook.red_blossom_leaves": "Fiery Blossom Leaves",
+  "block.qook.yellow_blossom_leaves": "Sunny Blossom Leaves"
 }

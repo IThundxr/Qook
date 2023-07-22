@@ -1,26 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "scooper",
+  "id": "qook",
   "version": "${version}",
-  "name": "scooper",
+  "name": "Qook",
   "description": "",
-  "authors": [],
+  "authors": ["IThundxr"],
   "contact": {
-    "repo": "https://github.com/ithundxr/scooper"
+    "repo": "https://github.com/ithundxr/qook"
   },
   "license": "MIT",
-  "icon": "assets/scooper/icon.png",
+  "icon": "assets/qook/icon.png",
   "environment": "*",
   "entrypoints": {
-    "client": [
-      "dev.ithundxr.scooper.client.ScooperClient"
-    ],
     "main": [
-      "dev.ithundxr.scooper.Scooper"
+      "dev.ithundxr.qook.Qook"
+    ],
+    "client": [
+      "dev.ithundxr.qook.QookClient"
+    ],
+    "fabric-datagen": [
+      "dev.ithundxr.qook.datagen.QookDataGeneration"
     ]
   },
   "mixins": [
-    "scooper.mixins.json"
+    "qook.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${loader_version}",

@@ -11,9 +11,9 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 
-public class BlossomLeaves extends LeavesBlock {
+public class BlossomLeavesBlock extends LeavesBlock {
 
-    public BlossomLeaves(Properties properties) {
+    public BlossomLeavesBlock(Properties properties) {
         super(properties);
     }
 
