@@ -7,11 +7,14 @@ import dev.ithundxr.qook.block.BlossomLeavesBlock;
 import dev.ithundxr.qook.util.BlockStateHelper;
 import io.github.fabricators_of_create.porting_lib.models.generators.ConfiguredModel;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.MapColor;
 
+// Ignore these errors that have no purpose lol
+@SuppressWarnings({"unused", "SameParameterValue", "Duplicates"})
 public class QookBlocks {
     private static final Registrate REGISTRATE = Qook.REGISTRATE;
 
@@ -37,11 +40,12 @@ public class QookBlocks {
     private static BlockEntry<RotatedPillarBlock> makeLogBlock(String name, MapColor color) {
         String capitalizedName = name.substring(0, 1).toUpperCase() + name.substring(1);
 
-        return REGISTRATE.block( name + "_log" , RotatedPillarBlock::new)
-                .initialProperties(() -> Blocks.OAK_LOG)
+        return REGISTRATE.block(name + "_log" , RotatedPillarBlock::new)
+                .initialProperties(() -> Blocks.STRIPPED_OAK_LOG)
                 .properties(p -> p
                         .mapColor(color)
                 )
+                .tag()
                 .blockstate((c, p) -> p.getVariantBuilder(c.get())
                         .forAllStates((state) -> ConfiguredModel.builder()
                                         .modelFile(p.models().cubeColumn(c.getName(),
@@ -49,11 +53,39 @@ public class QookBlocks {
                                                         Qook.asResource("block/" + name + "_log_top"))
                                                 .texture("particle", Qook.asResource("block/" + name + "_log"))
                                         )
-                                .rotationX(90)
+                                .rotationX(state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? 0 : 90)
+                                .rotationY(state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.X ? 90 : 0)
                                 .build()
                         )
                 )
                 .lang(capitalizedName + " Log")
+                .item()
+                .build()
+                .register();
+    }
+
+    private static BlockEntry<RotatedPillarBlock> makeStrippedLogBlock(String name, MapColor color) {
+        String capitalizedName = name.substring(0, 1).toUpperCase() + name.substring(1);
+
+        return REGISTRATE.block("stripped_" + name + "_log" , RotatedPillarBlock::new)
+                .initialProperties(() -> Blocks.OAK_LOG)
+                .properties(p -> p
+                        .mapColor(color)
+                )
+                .tag()
+                .blockstate((c, p) -> p.getVariantBuilder(c.get())
+                        .forAllStates((state) -> ConfiguredModel.builder()
+                                .modelFile(p.models().cubeColumn(c.getName(),
+                                                Qook.asResource("block/stripped_" + name + "_log"),
+                                                Qook.asResource("block/stripped_" + name + "_log_top"))
+                                        .texture("particle", Qook.asResource("block/stripped_" + name + "_log"))
+                                )
+                                .rotationX(state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? 0 : 90)
+                                .rotationY(state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.X ? 90 : 0)
+                                .build()
+                        )
+                )
+                .lang("Stripped " + capitalizedName + " Log")
                 .item()
                 .build()
                 .register();
@@ -66,8 +98,10 @@ public class QookBlocks {
     public static final BlockEntry<BlossomLeavesBlock> PINK_BLOSSOM_LEAVES = makeBlossomLeaves("pink", "Sweet", MapColor.COLOR_PINK);
     public static final BlockEntry<BlossomLeavesBlock> YELLOW_BLOSSOM_LEAVES = makeBlossomLeaves("yellow", "Sunny", MapColor.COLOR_YELLOW);
     public static final BlockEntry<BlossomLeavesBlock> RED_BLOSSOM_LEAVES = makeBlossomLeaves("red", "Fiery", MapColor.COLOR_RED);
+
     // Blossom Log
     public static final BlockEntry<RotatedPillarBlock> BLOSSOM_LOG = makeLogBlock("blossom", MapColor.COLOR_BROWN);
+    public static final BlockEntry<RotatedPillarBlock> STRIPPED_BLOSSOM_LOG = makeStrippedLogBlock("blossom", MapColor.COLOR_BROWN);
 
     public static void register() {
         // fabric: just load the class

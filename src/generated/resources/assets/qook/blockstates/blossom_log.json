@@ -1,13 +1,16 @@
 {
   "variants": {
     "axis=x": {
-      "model": "qook:block/blossom_log"
+      "model": "qook:block/blossom_log",
+      "x": 90,
+      "y": 90
     },
     "axis=y": {
       "model": "qook:block/blossom_log"
     },
     "axis=z": {
-      "model": "qook:block/blossom_log"
+      "model": "qook:block/blossom_log",
+      "x": 90
     }
   }
 }
