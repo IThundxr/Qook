@@ -9,18 +9,10 @@ group = maven_group
 repositories {
     maven { url = 'https://maven.parchmentmc.org' } // Parchment Mappings
     maven { url = "https://maven.quiltmc.org/repository/release" } // Quilt Mappings
-    maven { url = "https://mvn.devos.one/snapshots/" } // Create Fabric, Porting Lib, Forge Tags, Milk Lib, Registrate Fabric
-    maven { url = "https://maven.cafeteria.dev/releases" } // Fake Player API
+    maven { url = "https://mvn.devos.one/snapshots/" } // Registrate Fabric
     maven { url = "https://jitpack.io/" } // Mixin Extras
-    maven { url = "https://maven.shedaniel.me/" } // REI and deps
-    maven { url = "https://maven.jamieswhiteshirt.com/libs-release" } // Reach Entity Attributes
-    maven { url = "https://cursemaven.com" } // Forge Config API Port
-    maven { // Flywheel
-        url = "https://maven.tterrag.com/"
-        content {
-            includeGroup("com.jozufozu.flywheel")
-        }
-    }
+    maven { url = "https://maven.terraformersmc.com/" } // EMI
+    maven { url "https://maven.shedaniel.me" } // REI
 }
 
 dependencies {
@@ -35,6 +27,9 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}" // Fabric API
 
     modImplementation(include("com.tterrag.registrate_fabric:Registrate:${registrate_version}")) // Registrate
+
+    //modLocalRuntime "dev.emi:emi-fabric:${emi_version}" // EMI
+    modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}" // REI
 }
 
 sourceSets {

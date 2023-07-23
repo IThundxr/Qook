@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "qook:block/stripped_blossom_log",
+    "particle": "qook:block/stripped_blossom_log",
+    "side": "qook:block/stripped_blossom_log"
+  }
+}

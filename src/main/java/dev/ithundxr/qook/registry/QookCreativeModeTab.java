@@ -85,7 +85,8 @@ public class QookCreativeModeTab {
             );
 
             Map<ItemProviderEntry<?>, ItemProviderEntry<?>> simpleAfterOrderings = Map.of(
-//                    AllItems.VERTICAL_GEARBOX, AllBlocks.GEARBOX
+                    QookBlocks.BLOSSOM_WOOD, QookBlocks.BLOSSOM_LOG,
+                    QookBlocks.STRIPPED_BLOSSOM_WOOD, QookBlocks.STRIPPED_BLOSSOM_LOG
             );
 
             simpleBeforeOrderings.forEach((entry, otherEntry) -> {

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "qook:blossom_log"
+    },
+    {
+      "item": "qook:blossom_log"
+    },
+    {
+      "item": "qook:blossom_log"
+    },
+    {
+      "item": "qook:blossom_log"
+    }
+  ],
+  "result": {
+    "item": "qook:blossom_wood"
+  }
+}

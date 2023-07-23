@@ -11,7 +11,7 @@ public class QookDataGeneration implements DataGeneratorEntrypoint {
     public void onInitializeDataGenerator(FabricDataGenerator generator) {
         ExistingFileHelper helper = ExistingFileHelper.withResourcesFromArg();
         Pack pack = generator.createPack();
-        Qook.REGISTRATE.setupDatagen(generator.createPack(), helper);
-        Qook.gatherData(pack, helper);
+        Qook.REGISTRATE.setupDatagen(pack, helper);
+        Qook.gatherData(pack);
     }
 }
