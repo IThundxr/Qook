@@ -1,10 +1,29 @@
 {
-  "block.qook.blossom_log": "Blossom Log",
-  "block.qook.blue_blossom_leaves": "Frosty Blossom Leaves",
-  "block.qook.lavender_blossom_leaves": "Serene Blossom Leaves",
-  "block.qook.orange_blossom_leaves": "Warm Blossom Leaves",
-  "block.qook.pink_blossom_leaves": "Sweet Blossom Leaves",
-  "block.qook.red_blossom_leaves": "Fiery Blossom Leaves",
-  "block.qook.stripped_blossom_log": "Stripped Blossom Log",
-  "block.qook.yellow_blossom_leaves": "Sunny Blossom Leaves"
+
+	"_": "->------------------------]  Game Elements  [------------------------<-",
+
+	"block.qook.blossom_log": "Blossom Log",
+	"block.qook.blue_blossom_leaves": "Frosty Blossom Leaves",
+	"block.qook.lavender_blossom_leaves": "Serene Blossom Leaves",
+	"block.qook.orange_blossom_leaves": "Warm Blossom Leaves",
+	"block.qook.pink_blossom_leaves": "Sweet Blossom Leaves",
+	"block.qook.red_blossom_leaves": "Fiery Blossom Leaves",
+	"block.qook.stripped_blossom_log": "Stripped Blossom Log",
+	"block.qook.yellow_blossom_leaves": "Sunny Blossom Leaves",
+
+	"itemGroup.qook.main": "Qook",
+
+	"block.qook.test.tooltip": "Needed or else lang files go boom",
+
+
+	"_": "->------------------------]  UI & Messages  [------------------------<-",
+
+	"itemGroup.qook.main": "Qook",
+
+
+	"_": "->------------------------]  Item Descriptions  [------------------------<-",
+
+
+	"_": "Thank you for translating Qook!"
+
 }
