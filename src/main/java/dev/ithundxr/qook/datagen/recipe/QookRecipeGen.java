@@ -3,6 +3,7 @@ package dev.ithundxr.qook.datagen.recipe;
 import com.tterrag.registrate.util.entry.ItemProviderEntry;
 import dev.ithundxr.qook.Qook;
 import dev.ithundxr.qook.registry.QookBlocks;
+import dev.ithundxr.qook.registry.QookTags;
 import dev.ithundxr.qook.util.RegisteredObjects;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -29,11 +30,28 @@ public class QookRecipeGen extends QookRecipeProvider {
     GeneratedRecipe
 
     BLOSSOM_WOOD = create(QookBlocks.BLOSSOM_WOOD)
-            .unlockedBy(QookBlocks.BLOSSOM_WOOD)
+            .returns(3)
+            .unlockedBy(QookBlocks.BLOSSOM_LOG)
             .viaShaped(b -> b
                     .define('B', QookBlocks.BLOSSOM_LOG)
                     .pattern("BB ")
                     .pattern("BB ")
+            ),
+
+    STRIPPED_BLOSSOM_WOOD = create(QookBlocks.STRIPPED_BLOSSOM_WOOD)
+            .returns(3)
+            .unlockedBy(QookBlocks.STRIPPED_BLOSSOM_LOG)
+            .viaShaped(b -> b
+                .define('B', QookBlocks.STRIPPED_BLOSSOM_LOG)
+                .pattern("BB ")
+                .pattern("BB ")
+            ),
+
+    BLOSSOM_PLANKS = create(QookBlocks.BLOSSOM_PLANKS)
+            .returns(4)
+            .unlockedBy(QookBlocks.BLOSSOM_LOG)
+            .viaShapeless(b -> b
+                    .requires(QookTags.QookItemTags.BLOSSOM_LOGS)
             )
 
     ;

@@ -13,6 +13,9 @@ public class ModSetup {
         QookBlocks.register();
         QookItems.register();
 
+        // Tags
+        QookTags.register();
+
         // Register Registrate (Registers all items and blocks
         Qook.REGISTRATE.register();
 

@@ -3,6 +3,9 @@
 	"_": "->------------------------]  Game Elements  [------------------------<-",
 
 	"block.qook.blossom_log": "Blossom Log",
+	"block.qook.blossom_planks": "Blossom Planks",
+	"block.qook.blossom_slabs": "Blossom Slabs",
+	"block.qook.blossom_stairs": "Blossom Stairs",
 	"block.qook.blossom_wood": "Blossom Wood",
 	"block.qook.blue_blossom_leaves": "Frosty Blossom Leaves",
 	"block.qook.lavender_blossom_leaves": "Serene Blossom Leaves",
@@ -12,8 +15,6 @@
 	"block.qook.stripped_blossom_log": "Stripped Blossom Log",
 	"block.qook.stripped_blossom_wood": "Stripped Blossom Wood",
 	"block.qook.yellow_blossom_leaves": "Sunny Blossom Leaves",
-
-	"itemGroup.qook.main": "Qook",
 
 
 	"_": "->------------------------]  UI & Messages  [------------------------<-",
