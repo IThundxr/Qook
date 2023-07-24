@@ -32,7 +32,8 @@ public class QookFlammableBlocks {
                 QookBlocks.BLOSSOM_STAIRS.get(),
                 QookBlocks.BLOSSOM_FENCE.get(),
                 QookBlocks.BLOSSOM_FENCE_GATE.get(),
-                QookBlocks.BLOSSOM_DOOR.get()
+                QookBlocks.BLOSSOM_DOOR.get(),
+                QookBlocks.BLOSSOM_TRAPDOOR.get()
         };
 
 

@@ -1,6 +1,5 @@
 package dev.ithundxr.qook.datagen.recipe;
 
-import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.entry.ItemProviderEntry;
 import dev.ithundxr.qook.Qook;
 import dev.ithundxr.qook.registry.QookBlocks;
@@ -16,12 +15,12 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Block;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "SameParameterValue"})
 public class QookRecipeGen extends QookRecipeProvider {
 
     /*
@@ -42,7 +41,11 @@ public class QookRecipeGen extends QookRecipeProvider {
 
     BLOSSOM_FENCE = createFenceRecipe(QookBlocks.BLOSSOM_FENCE, QookBlocks.BLOSSOM_PLANKS),
 
-    BLOSSOM_FENCE_GATE = createFenceGateRecipe(QookBlocks.BLOSSOM_FENCE_GATE, QookBlocks.BLOSSOM_PLANKS)
+    BLOSSOM_FENCE_GATE = createFenceGateRecipe(QookBlocks.BLOSSOM_FENCE_GATE, QookBlocks.BLOSSOM_PLANKS),
+
+    BLOSSOM_DOOR = createDoorRecipe(QookBlocks.BLOSSOM_DOOR, QookBlocks.BLOSSOM_PLANKS),
+
+    BLOSSOM_TRAPDOOR = createTrapDoorRecipe(QookBlocks.BLOSSOM_TRAPDOOR, QookBlocks.BLOSSOM_PLANKS)
 
     ;
 
@@ -117,6 +120,29 @@ public class QookRecipeGen extends QookRecipeProvider {
                 );
     }
 
+    GeneratedRecipe createDoorRecipe(ItemProviderEntry<? extends ItemLike> result, ItemProviderEntry<? extends ItemLike> ingredient) {
+        return create(result)
+                .returns(3)
+                .unlockedBy(ingredient)
+                .viaShaped(b -> b
+                        .define('B', ingredient)
+                        .pattern("BB ")
+                        .pattern("BB ")
+                        .pattern("BB ")
+                );
+    }
+
+    GeneratedRecipe createTrapDoorRecipe(ItemProviderEntry<? extends ItemLike> result, ItemProviderEntry<? extends ItemLike> ingredient) {
+        return create(result)
+                .returns(2)
+                .unlockedBy(ingredient)
+                .viaShaped(b -> b
+                        .define('B', ingredient)
+                        .pattern("BBB")
+                        .pattern("BBB")
+                );
+    }
+
     GeneratedRecipeBuilder create(Supplier<ItemLike> result) {
         return new GeneratedRecipeBuilder("/", result);
     }
@@ -134,7 +160,7 @@ public class QookRecipeGen extends QookRecipeProvider {
     }
 
     @Override
-    public String getName() {
+    public @NotNull String getName() {
         return "Qook's Recipes";
     }
 

@@ -56,6 +56,9 @@ public class QookBlocks {
     // Blossom Door
     public static final BlockEntry<DoorBlock> BLOSSOM_DOOR = makeDoorBlock("blossom", MapColor.COLOR_RED);
 
+    // Blossom Trapdoor
+    public static final BlockEntry<TrapDoorBlock> BLOSSOM_TRAPDOOR = makeTrapDoorBlock("blossom", MapColor.COLOR_RED);
+
 
     private static BlockEntry<BlossomLeavesBlock> makeBlossomLeaves(String color, String name, MapColor mapColor) {
         return REGISTRATE.block(color + "_blossom_leaves" , BlossomLeavesBlock::new)
@@ -280,10 +283,28 @@ public class QookBlocks {
                         .mapColor(color)
                 )
                 .tag(BlockTags.WOODEN_DOORS)
+                .loot((registrateBlockLootTables, doorBlock) -> registrateBlockLootTables.add(doorBlock, registrateBlockLootTables.createDoorTable(doorBlock)))
                 .blockstate((c, p) -> p.doorBlock(c.get(), Qook.asResource("block/" + name + "_door_bottom"), Qook.asResource("block/" + name + "_door_top")))
                 .lang(capitalizedName + " Door")
                 .item()
                 .model((c, p) -> p.generated(c))
+                .build()
+                .register();
+    }
+
+    private static BlockEntry<TrapDoorBlock> makeTrapDoorBlock(String name, MapColor color) {
+        String capitalizedName = name.substring(0, 1).toUpperCase() + name.substring(1);
+
+        return REGISTRATE.block(name + "_trapdoor", p -> new TrapDoorBlock(p, BlockSetType.OAK))
+                .initialProperties(() -> Blocks.OAK_TRAPDOOR)
+                .properties(p -> p
+                        .mapColor(color)
+                )
+                .tag(BlockTags.WOODEN_TRAPDOORS)
+                .blockstate((c, p) -> p.trapdoorBlock(c.get(), Qook.asResource("block/" + name + "_trapdoor"), false))
+                .lang(capitalizedName + " Trapdoor")
+                .item()
+                .model((c, p) -> p.trapdoorBottom(c.getName(), Qook.asResource( "block/" + name + "_trapdoor")))
                 .build()
                 .register();
     }
