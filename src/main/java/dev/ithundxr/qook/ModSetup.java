@@ -21,8 +21,5 @@ public class ModSetup {
 
         // Register Strippable Blocks
         QookStrippableBlocks.register();
-
-        // Register Flammable Blocks
-        QookFlammableBlocks.register();
     }
 }
