@@ -22,6 +22,7 @@ dependencies {
         it.parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
         it.officialMojangMappings { nameSyntheticMembers = false }
     })
+    //mappings("net.fabricmc:yarn:${yarn_mappings}:v2") // Mappings
 
     modImplementation "net.fabricmc:fabric-loader:${loader_version}" // Fabric Loader
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}" // Fabric API

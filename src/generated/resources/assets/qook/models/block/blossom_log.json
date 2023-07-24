@@ -2,7 +2,6 @@
   "parent": "minecraft:block/cube_column",
   "textures": {
     "end": "qook:block/blossom_log_top",
-    "particle": "qook:block/blossom_log",
     "side": "qook:block/blossom_log"
   }
 }

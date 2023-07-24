@@ -1,21 +1,22 @@
 package dev.ithundxr.qook.datagen.recipe;
 
+import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.entry.ItemProviderEntry;
 import dev.ithundxr.qook.Qook;
 import dev.ithundxr.qook.registry.QookBlocks;
 import dev.ithundxr.qook.registry.QookTags;
 import dev.ithundxr.qook.util.RegisteredObjects;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.advancements.critereon.ItemPredicate;
-import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
@@ -29,36 +30,92 @@ public class QookRecipeGen extends QookRecipeProvider {
 
     GeneratedRecipe
 
-    BLOSSOM_WOOD = create(QookBlocks.BLOSSOM_WOOD)
-            .returns(3)
-            .unlockedBy(QookBlocks.BLOSSOM_LOG)
-            .viaShaped(b -> b
-                    .define('B', QookBlocks.BLOSSOM_LOG)
-                    .pattern("BB ")
-                    .pattern("BB ")
-            ),
+    BLOSSOM_WOOD = createWoodRecipe(QookBlocks.BLOSSOM_WOOD, QookBlocks.BLOSSOM_LOG),
 
-    STRIPPED_BLOSSOM_WOOD = create(QookBlocks.STRIPPED_BLOSSOM_WOOD)
-            .returns(3)
-            .unlockedBy(QookBlocks.STRIPPED_BLOSSOM_LOG)
-            .viaShaped(b -> b
-                .define('B', QookBlocks.STRIPPED_BLOSSOM_LOG)
-                .pattern("BB ")
-                .pattern("BB ")
-            ),
+    STRIPPED_BLOSSOM_WOOD = createWoodRecipe(QookBlocks.STRIPPED_BLOSSOM_WOOD, QookBlocks.STRIPPED_BLOSSOM_LOG),
 
-    BLOSSOM_PLANKS = create(QookBlocks.BLOSSOM_PLANKS)
-            .returns(4)
-            .unlockedBy(QookBlocks.BLOSSOM_LOG)
-            .viaShapeless(b -> b
-                    .requires(QookTags.QookItemTags.BLOSSOM_LOGS)
-            )
+    BLOSSOM_PLANKS = createPlanksRecipe(QookBlocks.BLOSSOM_PLANKS, QookBlocks.BLOSSOM_LOG, QookTags.QookItemTags.BLOSSOM_LOGS),
+
+    BLOSSOM_SLABS = createSlabsRecipe(QookBlocks.BLOSSOM_SLABS, QookBlocks.BLOSSOM_PLANKS),
+
+    BLOSSOM_STAIRS = createStairsRecipe(QookBlocks.BLOSSOM_STAIRS, QookBlocks.BLOSSOM_PLANKS),
+
+    BLOSSOM_FENCE = createFenceRecipe(QookBlocks.BLOSSOM_FENCE, QookBlocks.BLOSSOM_PLANKS),
+
+    BLOSSOM_FENCE_GATE = createFenceGateRecipe(QookBlocks.BLOSSOM_FENCE_GATE, QookBlocks.BLOSSOM_PLANKS)
 
     ;
 
     /*
      * End of recipe list
      */
+
+    GeneratedRecipe createWoodRecipe(ItemProviderEntry<? extends ItemLike> result, ItemProviderEntry<? extends ItemLike> ingredient) {
+        return create(result)
+                .returns(3)
+                .unlockedBy(ingredient)
+                .viaShaped(b -> b
+                        .define('B', ingredient.get())
+                        .pattern("BB ")
+                        .pattern("BB ")
+                );
+    }
+
+    GeneratedRecipe createPlanksRecipe(ItemProviderEntry<? extends ItemLike> result, ItemProviderEntry<? extends ItemLike> ingredient, TagKey<Item> tag) {
+        return create(result)
+                .returns(4)
+                .unlockedBy(ingredient)
+                .viaShapeless(b -> b
+                        .requires(tag)
+                );
+    }
+
+    GeneratedRecipe createSlabsRecipe(ItemProviderEntry<? extends ItemLike> result, ItemProviderEntry<? extends ItemLike> ingredient) {
+        return create(result)
+                .returns(6)
+                .unlockedBy(ingredient)
+                .viaShaped(b -> b
+                        .define('B', ingredient)
+                        .pattern("   ")
+                        .pattern("BBB")
+                );
+    }
+
+    GeneratedRecipe createStairsRecipe(ItemProviderEntry<? extends ItemLike> result, ItemProviderEntry<? extends ItemLike> ingredient) {
+        return create(result)
+                .returns(4)
+                .unlockedBy(ingredient)
+                .viaShaped(b -> b
+                        .define('B', ingredient)
+                        .pattern("B  ")
+                        .pattern("BB ")
+                        .pattern("BBB")
+                );
+    }
+
+    GeneratedRecipe createFenceRecipe(ItemProviderEntry<? extends ItemLike> result, ItemProviderEntry<? extends ItemLike> ingredient) {
+        return create(result)
+                .returns(3)
+                .unlockedBy(ingredient)
+                .viaShaped(b -> b
+                        .define('B', ingredient)
+                        .define('S', Items.STICK)
+                        .pattern("BSB")
+                        .pattern("BSB")
+                );
+    }
+
+    GeneratedRecipe createFenceGateRecipe(ItemProviderEntry<? extends ItemLike> result, ItemProviderEntry<? extends ItemLike> ingredient) {
+        return create(result)
+                .returns(3)
+                .unlockedBy(ingredient)
+                .viaShaped(b -> b
+                        .define('B', ingredient)
+                        .define('S', Items.STICK)
+                        .pattern("SBS")
+                        .pattern("SBS")
+                );
+    }
 
     GeneratedRecipeBuilder create(Supplier<ItemLike> result) {
         return new GeneratedRecipeBuilder("/", result);
@@ -78,7 +135,7 @@ public class QookRecipeGen extends QookRecipeProvider {
 
     @Override
     public String getName() {
-        return "Qook Recipes";
+        return "Qook's Recipes";
     }
 
     class GeneratedRecipeBuilder {

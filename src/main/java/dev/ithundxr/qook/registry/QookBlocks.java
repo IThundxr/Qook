@@ -13,6 +13,8 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 
 // Ignore these errors that have no purpose lol
@@ -44,6 +46,15 @@ public class QookBlocks {
 
     // Blossom Stairs
     public static final BlockEntry<StairBlock> BLOSSOM_STAIRS = makeStairsBlock("blossom", MapColor.COLOR_RED);
+
+    // Blossom Fence
+    public static final BlockEntry<FenceBlock> BLOSSOM_FENCE = makeFenceBlock("blossom", MapColor.COLOR_RED);
+
+    // Blossom Fence Gate
+    public static final BlockEntry<FenceGateBlock> BLOSSOM_FENCE_GATE = makeFenceGateBlock("blossom", MapColor.COLOR_RED);
+
+    // Blossom Door
+    public static final BlockEntry<DoorBlock> BLOSSOM_DOOR = makeDoorBlock("blossom", MapColor.COLOR_RED);
 
 
     private static BlockEntry<BlossomLeavesBlock> makeBlossomLeaves(String color, String name, MapColor mapColor) {
@@ -80,8 +91,8 @@ public class QookBlocks {
                         .forAllStates((state) -> ConfiguredModel.builder()
                                         .modelFile(p.models().cubeColumn(c.getName(),
                                                         Qook.asResource("block/" + name + "_log"),
-                                                        Qook.asResource("block/" + name + "_log_top"))
-                                                .texture("particle", Qook.asResource("block/" + name + "_log"))
+                                                        Qook.asResource("block/" + name + "_log_top")
+                                                )
                                         )
                                 .rotationX(state.getValue(RotatedPillarBlock.AXIS) != Direction.Axis.Y ? 90 : 0)
                                 .rotationY(state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.X ? 90 : 0)
@@ -108,8 +119,8 @@ public class QookBlocks {
                         .forAllStates((state) -> ConfiguredModel.builder()
                                 .modelFile(p.models().cubeColumn(c.getName(),
                                                 Qook.asResource("block/stripped_" + name + "_log"),
-                                                Qook.asResource("block/stripped_" + name + "_log_top"))
-                                        .texture("particle", Qook.asResource("block/stripped_" + name + "_log"))
+                                                Qook.asResource("block/stripped_" + name + "_log_top")
+                                        )
                                 )
                                 .rotationX(state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? 0 : 90)
                                 .rotationY(state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.X ? 90 : 0)
@@ -136,8 +147,8 @@ public class QookBlocks {
                         .forAllStates((state) -> ConfiguredModel.builder()
                                 .modelFile(p.models().cubeColumn(c.getName(),
                                                 Qook.asResource("block/" + name + "_log"),
-                                                Qook.asResource("block/" + name + "_log"))
-                                        .texture("particle", Qook.asResource("block/" + name + "_log"))
+                                                Qook.asResource("block/" + name + "_log")
+                                        )
                                 )
                                 .rotationX(state.getValue(RotatedPillarBlock.AXIS) != Direction.Axis.Y ? 90 : 0)
                                 .rotationY(state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.X ? 90 : 0)
@@ -164,8 +175,8 @@ public class QookBlocks {
                         .forAllStates((state) -> ConfiguredModel.builder()
                                 .modelFile(p.models().cubeColumn(c.getName(),
                                                 Qook.asResource("block/stripped_" + name + "_log"),
-                                                Qook.asResource("block/stripped_" + name + "_log"))
-                                        .texture("particle", Qook.asResource("block/stripped_" + name + "_log"))
+                                                Qook.asResource("block/stripped_" + name + "_log")
+                                        )
                                 )
                                 .rotationX(state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? 0 : 90)
                                 .rotationY(state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.X ? 90 : 0)
@@ -223,6 +234,56 @@ public class QookBlocks {
                 .blockstate((c, p) -> p.stairsBlock(c.get(), Qook.asResource("block/" + name + "_planks")))
                 .lang(capitalizedName + " Stairs")
                 .item()
+                .build()
+                .register();
+    }
+
+    private static BlockEntry<FenceBlock> makeFenceBlock(String name, MapColor color) {
+        String capitalizedName = name.substring(0, 1).toUpperCase() + name.substring(1);
+
+        return REGISTRATE.block(name + "_fence", FenceBlock::new)
+                .initialProperties(() -> Blocks.OAK_FENCE)
+                .properties(p -> p
+                        .mapColor(color)
+                )
+                .tag(BlockTags.WOODEN_FENCES)
+                .blockstate((c, p) -> p.fenceBlock(c.get(), Qook.asResource("block/" + name + "_planks")))
+                .lang(capitalizedName + " Fence")
+                .item()
+                .model((c, p) -> p.fenceInventory(name + "_fence", Qook.asResource("block/" + name + "_planks")))
+                .build()
+                .register();
+    }
+
+    private static BlockEntry<FenceGateBlock> makeFenceGateBlock(String name, MapColor color) {
+        String capitalizedName = name.substring(0, 1).toUpperCase() + name.substring(1);
+
+        return REGISTRATE.block(name + "_fence_gate", p -> new FenceGateBlock(p, WoodType.OAK))
+                .initialProperties(() -> Blocks.OAK_FENCE_GATE)
+                .properties(p -> p
+                        .mapColor(color)
+                )
+                .tag(BlockTags.FENCE_GATES)
+                .blockstate((c, p) -> p.fenceGateBlock(c.get(), Qook.asResource("block/" + name + "_planks")))
+                .lang(capitalizedName + " Fence Gate")
+                .item()
+                .build()
+                .register();
+    }
+
+    private static BlockEntry<DoorBlock> makeDoorBlock(String name, MapColor color) {
+        String capitalizedName = name.substring(0, 1).toUpperCase() + name.substring(1);
+
+        return REGISTRATE.block(name + "_door", p -> new DoorBlock(p, BlockSetType.OAK))
+                .initialProperties(() -> Blocks.OAK_DOOR)
+                .properties(p -> p
+                        .mapColor(color)
+                )
+                .tag(BlockTags.WOODEN_DOORS)
+                .blockstate((c, p) -> p.doorBlock(c.get(), Qook.asResource("block/" + name + "_door_bottom"), Qook.asResource("block/" + name + "_door_top")))
+                .lang(capitalizedName + " Door")
+                .item()
+                .model((c, p) -> p.generated(c))
                 .build()
                 .register();
     }
