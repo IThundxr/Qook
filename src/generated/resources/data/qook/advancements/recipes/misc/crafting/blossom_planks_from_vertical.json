@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "qook:crafting///blossom_planksvertical_"
+        "recipe": "qook:crafting///blossom_planks_from_vertical"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "qook:crafting///blossom_planksvertical_"
+      "qook:crafting///blossom_planks_from_vertical"
     ]
   },
   "sends_telemetry_event": false

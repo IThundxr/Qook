@@ -53,9 +53,9 @@ public class QookRecipeGen extends QookRecipeProvider {
 
     BLOSSOM_PRESSURE_PLATE = createPressurePlateRecipe(QookBlocks.BLOSSOM_PRESSURE_PLATE, QookBlocks.BLOSSOM_PLANKS),
 
-    BLOSSOM_LADDER = createLadderRecipe(QookBlocks.BLOSSOM_LADDER, QookBlocks.BLOSSOM_PLANKS)
+    BLOSSOM_LADDER = createLadderRecipe(QookBlocks.BLOSSOM_LADDER, QookBlocks.BLOSSOM_PLANKS),
 
-    //VERTICAL_BLOSSOM_PLANKS = createVerticalPlanksRecipe(QookBlocks.VERTICAL_BLOSSOM_PLANKS, QookBlocks.BLOSSOM_PLANKS)
+    VERTICAL_BLOSSOM_PLANKS = createVerticalPlanksRecipe(QookBlocks.VERTICAL_BLOSSOM_PLANKS, QookBlocks.BLOSSOM_PLANKS)
 
     ;
 
@@ -200,7 +200,7 @@ public class QookRecipeGen extends QookRecipeProvider {
 
     GeneratedRecipe createVerticalPlanksintoPlanksRecipe(ItemProviderEntry<? extends ItemLike> result, ItemProviderEntry<? extends ItemLike> ingredient) {
         return create(result)
-                .withSuffix("vertical_")
+                .withSuffix("_from_vertical")
                 .returns(1)
                 .unlockedBy(ingredient)
                 .viaShaped(b -> b

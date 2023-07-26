@@ -1,18 +1,19 @@
-// 1.20.1	2023-07-26T18:00:30.832402804	Qook/Qook's Recipes
+// 1.20.1	2023-07-26T18:02:04.944696379	Qook/Qook's Recipes
 91c2341e9d0ed41a9a18c1b8c98cbce26931610d data/qook/advancements/recipes/misc/crafting/blossom_wood.json
 953b763f5c13a2974c4565175e1dbc327d134686 data/qook/recipes/crafting/blossom_stairs.json
 6b535c148d1be7ddaaee8bb754744c088df6ab69 data/qook/advancements/recipes/misc/crafting/blossom_pressure_plate.json
-74b96b077edc8e9d2b067926446dbdb238ea15f7 data/qook/recipes/crafting/blossom_planksvertical_.json
+4cdeb372768ab355a7f5e1097599153225bfb3c6 data/qook/recipes/crafting/vertical_blossom_planks.json
 c15e251f22d46e0a09032339fb7463ac3e2dc741 data/qook/recipes/crafting/blossom_wood.json
 e73e2ded1288e821810b735b954e019e3ce1037c data/qook/recipes/crafting/blossom_button.json
+74b96b077edc8e9d2b067926446dbdb238ea15f7 data/qook/recipes/crafting/blossom_planks_from_vertical.json
 a75083b9392c31329f526b843ba730fc7cdf89a8 data/qook/recipes/crafting/stripped_blossom_wood.json
 9f1693a286134f8796981e26c35ef3db768ce1d2 data/qook/recipes/crafting/blossom_planks.json
 4e677602adcd0da4dd1a7b6d434a452c4d68c7c0 data/qook/recipes/crafting/blossom_fence_gate.json
 23ad80dca0b4389f3d50b0cbaab8ef9c6033ba9c data/qook/recipes/crafting/blossom_fence.json
-e235e15706c94fd32932c65d09ef6c224f7e20b3 data/qook/advancements/recipes/misc/crafting/blossom_planksvertical_.json
+568d39e1a635a9770323759907caf819ec3e49e7 data/qook/advancements/recipes/misc/crafting/blossom_planks_from_vertical.json
 afaaa08d8fcfac4cd41a8b905057e56baa78f65d data/qook/advancements/recipes/misc/crafting/blossom_fence.json
-0f7c57eb66694bdf76138d983fb8f8582aa825c3 data/qook/advancements/recipes/misc/crafting/blossom_fence_gate.json
 729681084ba331632fa965eb3318f4cc11aaccda data/qook/recipes/crafting/blossom_door.json
+0f7c57eb66694bdf76138d983fb8f8582aa825c3 data/qook/advancements/recipes/misc/crafting/blossom_fence_gate.json
 4b197a75679841f3901969855983cec1dc2ec9ae data/qook/advancements/recipes/misc/crafting/stripped_blossom_wood.json
 a57d3cd1c0e82fe3bba2ae5bdbac3b33f8e68b77 data/qook/recipes/crafting/blossom_ladder.json
 e4af9839f64ce427ee6b4e8b5033fc345e1e8707 data/qook/advancements/recipes/misc/crafting/blossom_stairs.json
@@ -24,4 +25,5 @@ e15eaadff1cda75957f05c5b99d4abd38216f8cc data/qook/advancements/recipes/misc/cra
 933cece863fb82e56d9266e31e798cfa8bd15cfd data/qook/advancements/recipes/misc/crafting/blossom_planks.json
 676295c01dc9cacbc53dd5f886563fa4fa3d1e25 data/qook/recipes/crafting/blossom_pressure_plate.json
 35b1f15abbcd65b39253aee848e61def2ff80ec5 data/qook/advancements/recipes/misc/crafting/blossom_button.json
+36b764830fc7e27622b2c7951ca6112f5cd0f242 data/qook/advancements/recipes/misc/crafting/vertical_blossom_planks.json
 3473dba7b78ade84e1983aff794f00541b8d29ee data/qook/advancements/recipes/misc/crafting/blossom_trapdoor.json
