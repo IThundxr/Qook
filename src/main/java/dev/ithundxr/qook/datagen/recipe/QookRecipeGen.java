@@ -35,6 +35,8 @@ public class QookRecipeGen extends QookRecipeProvider {
 
     BLOSSOM_PLANKS = createPlanksRecipe(QookBlocks.BLOSSOM_PLANKS, QookBlocks.BLOSSOM_LOG, QookTags.QookItemTags.BLOSSOM_LOGS),
 
+    BLOSSOM_PLANKS_FROM_VERT = createVerticalPlanksintoPlanksRecipe(QookBlocks.BLOSSOM_PLANKS, QookBlocks.VERTICAL_BLOSSOM_PLANKS),
+
     BLOSSOM_SLABS = createSlabsRecipe(QookBlocks.BLOSSOM_SLABS, QookBlocks.BLOSSOM_PLANKS),
 
     BLOSSOM_STAIRS = createStairsRecipe(QookBlocks.BLOSSOM_STAIRS, QookBlocks.BLOSSOM_PLANKS),
@@ -45,7 +47,15 @@ public class QookRecipeGen extends QookRecipeProvider {
 
     BLOSSOM_DOOR = createDoorRecipe(QookBlocks.BLOSSOM_DOOR, QookBlocks.BLOSSOM_PLANKS),
 
-    BLOSSOM_TRAPDOOR = createTrapDoorRecipe(QookBlocks.BLOSSOM_TRAPDOOR, QookBlocks.BLOSSOM_PLANKS)
+    BLOSSOM_TRAPDOOR = createTrapDoorRecipe(QookBlocks.BLOSSOM_TRAPDOOR, QookBlocks.BLOSSOM_PLANKS),
+
+    BLOSSOM_BUTTON = createButtonRecipe(QookBlocks.BLOSSOM_BUTTON, QookBlocks.BLOSSOM_PLANKS),
+
+    BLOSSOM_PRESSURE_PLATE = createPressurePlateRecipe(QookBlocks.BLOSSOM_PRESSURE_PLATE, QookBlocks.BLOSSOM_PLANKS),
+
+    BLOSSOM_LADDER = createLadderRecipe(QookBlocks.BLOSSOM_LADDER, QookBlocks.BLOSSOM_PLANKS)
+
+    //VERTICAL_BLOSSOM_PLANKS = createVerticalPlanksRecipe(QookBlocks.VERTICAL_BLOSSOM_PLANKS, QookBlocks.BLOSSOM_PLANKS)
 
     ;
 
@@ -142,6 +152,64 @@ public class QookRecipeGen extends QookRecipeProvider {
                         .pattern("BBB")
                 );
     }
+
+    GeneratedRecipe createButtonRecipe(ItemProviderEntry<? extends ItemLike> result, ItemProviderEntry<? extends ItemLike> ingredient) {
+        return create(result)
+                .returns(2)
+                .unlockedBy(ingredient)
+                .viaShapeless(b -> b
+                        .requires(ingredient)
+                );
+    }
+
+    GeneratedRecipe createPressurePlateRecipe(ItemProviderEntry<? extends ItemLike> result, ItemProviderEntry<? extends ItemLike> ingredient) {
+        return create(result)
+                .returns(1)
+                .unlockedBy(ingredient)
+                .viaShaped(b -> b
+                        .define('B', ingredient)
+                        .pattern("   ")
+                        .pattern("BB ")
+                );
+    }
+
+    GeneratedRecipe createLadderRecipe(ItemProviderEntry<? extends ItemLike> result, ItemProviderEntry<? extends ItemLike> ingredient) {
+        return create(result)
+                .returns(4)
+                .unlockedBy(ingredient)
+                .viaShaped(b -> b
+                        .define('B', ingredient)
+                        .define('S', Items.STICK)
+                        .pattern("S S")
+                        .pattern("SBS")
+                        .pattern("S S")
+                );
+    }
+
+    GeneratedRecipe createVerticalPlanksRecipe(ItemProviderEntry<? extends ItemLike> result, ItemProviderEntry<? extends ItemLike> ingredient) {
+        return create(result)
+                .returns(3)
+                .unlockedBy(ingredient)
+                .viaShaped(b -> b
+                        .define('B', ingredient)
+                        .pattern(" B ")
+                        .pattern(" B ")
+                        .pattern(" B ")
+                );
+    }
+
+    GeneratedRecipe createVerticalPlanksintoPlanksRecipe(ItemProviderEntry<? extends ItemLike> result, ItemProviderEntry<? extends ItemLike> ingredient) {
+        return create(result)
+                .withSuffix("vertical_")
+                .returns(1)
+                .unlockedBy(ingredient)
+                .viaShaped(b -> b
+                        .define('B', ingredient)
+                        .pattern("   ")
+                        .pattern(" B ")
+                );
+    }
+
 
     GeneratedRecipeBuilder create(Supplier<ItemLike> result) {
         return new GeneratedRecipeBuilder("/", result);

@@ -1,9 +1,12 @@
 {
+  "block.qook.blossom_button": "uoʇʇnᗺ ɯossoןᗺ",
   "block.qook.blossom_door": "ɹooᗡ ɯossoןᗺ",
   "block.qook.blossom_fence": "ǝɔuǝℲ ɯossoןᗺ",
   "block.qook.blossom_fence_gate": "ǝʇɐ⅁ ǝɔuǝℲ ɯossoןᗺ",
+  "block.qook.blossom_ladder": "ɹǝppɐꞀ ɯossoןᗺ",
   "block.qook.blossom_log": "boꞀ ɯossoןᗺ",
   "block.qook.blossom_planks": "sʞuɐןԀ ɯossoןᗺ",
+  "block.qook.blossom_pressure_plate": "ǝʇɐןԀ ǝɹnssǝɹԀ ɯossoןᗺ",
   "block.qook.blossom_slabs": "sqɐןS ɯossoןᗺ",
   "block.qook.blossom_stairs": "sɹıɐʇS ɯossoןᗺ",
   "block.qook.blossom_trapdoor": "ɹoopdɐɹ⟘ ɯossoןᗺ",
@@ -15,5 +18,6 @@
   "block.qook.red_blossom_leaves": "sǝʌɐǝꞀ ɯossoןᗺ ʎɹǝıℲ",
   "block.qook.stripped_blossom_log": "boꞀ ɯossoןᗺ pǝddıɹʇS",
   "block.qook.stripped_blossom_wood": "pooM ɯossoןᗺ pǝddıɹʇS",
+  "block.qook.vertical_blossom_planks": "sʞuɐןԀ ɯossoןᗺ ןɐɔıʇɹǝΛ",
   "block.qook.yellow_blossom_leaves": "sǝʌɐǝꞀ ɯossoןᗺ ʎuunS"
 }

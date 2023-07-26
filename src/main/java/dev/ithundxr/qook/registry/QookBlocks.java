@@ -60,6 +60,36 @@ public class QookBlocks {
     // Blossom Trapdoor
     public static final BlockEntry<TrapDoorBlock> BLOSSOM_TRAPDOOR = makeTrapDoorBlock("blossom", MapColor.COLOR_RED, true);
 
+    // Blossom Button
+    public static final BlockEntry<ButtonBlock> BLOSSOM_BUTTON = makeButtonBlock("blossom", MapColor.COLOR_RED);
+
+    // Blossom Pressure Plate
+    public static final BlockEntry<PressurePlateBlock> BLOSSOM_PRESSURE_PLATE = makePressurePlateBlock("blossom", MapColor.COLOR_RED, true);
+
+    // Blossom Ladder
+    public static final BlockEntry<LadderBlock> BLOSSOM_LADDER = makeLadderBlock("blossom", MapColor.COLOR_RED);
+
+    // Vertical Blossom Planks
+    public static final BlockEntry<Block> VERTICAL_BLOSSOM_PLANKS = makeVerticalPlanksBlock("blossom", MapColor.COLOR_RED, true);
+
+
+
+
+
+    // Hello! this funny space helps me stay sane
+    // when im looking at this very funny confusing file :)
+
+
+
+
+
+
+
+
+
+
+
+
 
     private static BlockEntry<BlossomLeavesBlock> makeBlossomLeaves(String color, String name, MapColor mapColor, boolean flammable) {
         return REGISTRATE.block(color + "_blossom_leaves" , BlossomLeavesBlock::new)
@@ -224,7 +254,7 @@ public class QookBlocks {
                 .properties(p -> p
                         .mapColor(color)
                 )
-                .tag(BlockTags.SLABS)
+                .tag(BlockTags.SLABS, BlockTags.MINEABLE_WITH_AXE)
                 .blockstate((c, p)-> p.slabBlock(c.get(), texture, texture))
                 .onRegister(flammable ? c -> FlammableBlockRegistry.getDefaultInstance().add(c, 30, 60) : null)
                 .lang(capitalizedName + " Slabs")
@@ -241,7 +271,7 @@ public class QookBlocks {
                 .properties(p -> p
                         .mapColor(color)
                 )
-                .tag(BlockTags.STAIRS)
+                .tag(BlockTags.STAIRS, BlockTags.MINEABLE_WITH_AXE)
                 .blockstate((c, p) -> p.stairsBlock(c.get(), Qook.asResource("block/" + name + "_planks")))
                 .onRegister(flammable ? c -> FlammableBlockRegistry.getDefaultInstance().add(c, 30, 60) : null)
                 .lang(capitalizedName + " Stairs")
@@ -263,7 +293,7 @@ public class QookBlocks {
                 .onRegister(flammable ? c -> FlammableBlockRegistry.getDefaultInstance().add(c, 30, 60) : null)
                 .lang(capitalizedName + " Fence")
                 .item()
-                .model((c, p) -> p.fenceInventory(name + "_fence", Qook.asResource("block/" + name + "_planks")))
+                .model((c, p) -> p.fenceInventory(c.getName(), Qook.asResource("block/" + name + "_planks")))
                 .build()
                 .register();
     }
@@ -318,6 +348,84 @@ public class QookBlocks {
                 .lang(capitalizedName + " Trapdoor")
                 .item()
                 .model((c, p) -> p.trapdoorBottom(c.getName(), Qook.asResource( "block/" + name + "_trapdoor")))
+                .build()
+                .register();
+    }
+
+    private static BlockEntry<ButtonBlock> makeButtonBlock(String name, MapColor color) {
+        String capitalizedName = name.substring(0, 1).toUpperCase() + name.substring(1);
+
+        return REGISTRATE.block(name + "_button", p -> new ButtonBlock(p, BlockSetType.OAK, 30, true))
+                .initialProperties(() -> Blocks.OAK_TRAPDOOR)
+                .properties(p -> p
+                        .mapColor(color)
+                )
+                .tag(BlockTags.WOODEN_TRAPDOORS)
+                .blockstate((c, p) -> p.buttonBlock(c.get(), Qook.asResource("block/" + name + "_planks")))
+                .lang(capitalizedName + " Button")
+                .item()
+                .model((c, p) -> p.buttonInventory(c.getName(), Qook.asResource("block/" + name + "_planks")))
+                .build()
+                .register();
+    }
+
+    private static BlockEntry<PressurePlateBlock> makePressurePlateBlock(String name, MapColor color, boolean flammable) {
+        String capitalizedName = name.substring(0, 1).toUpperCase() + name.substring(1);
+
+        return REGISTRATE.block(name + "_pressure_plate", p -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, p, BlockSetType.OAK))
+                .initialProperties(() -> Blocks.OAK_PRESSURE_PLATE)
+                .properties(p -> p
+                        .mapColor(color)
+                )
+                .tag(BlockTags.WOODEN_PRESSURE_PLATES)
+                .blockstate((c, p) -> p.pressurePlateBlock(c.get(), Qook.asResource("block/" + name + "_planks")))
+                .onRegister(flammable ? c -> FlammableBlockRegistry.getDefaultInstance().add(c, 30, 60) : null)
+                .lang(capitalizedName + " Pressure Plate")
+                .item()
+                .build()
+                .register();
+    }
+
+    private static BlockEntry<LadderBlock> makeLadderBlock(String name, MapColor color) {
+        String capitalizedName = name.substring(0, 1).toUpperCase() + name.substring(1);
+
+        return REGISTRATE.block(name + "_ladder", LadderBlock::new)
+                .initialProperties(() -> Blocks.LADDER)
+                .properties(p -> p
+                        .mapColor(color)
+                )
+                .addLayer(() -> RenderType::cutout)
+                .tag(BlockTags.CLIMBABLE)
+                .blockstate((c, p) -> p.horizontalBlock(c.getEntry(), p.models()
+                        .withExistingParent(c.getName(), "block/ladder")
+                            .texture("texture", Qook.asResource("block/" + name + "_log"))
+                            .texture("particle", Qook.asResource("block/" + name + "_log")
+                        )
+                    )
+                )
+                .lang(capitalizedName + " Ladder")
+                .item()
+                .model((c, p) -> p.blockSprite(c))
+                .build()
+                .register();
+    }
+
+    private static BlockEntry<Block> makeVerticalPlanksBlock(String name, MapColor color, boolean flammable) {
+        String capitalizedName = name.substring(0, 1).toUpperCase() + name.substring(1);
+
+        return REGISTRATE.block("vertical_" + name + "_planks", Block::new)
+                .initialProperties(() -> Blocks.OAK_PLANKS)
+                .properties(p -> p
+                        .mapColor(color)
+                )
+                .tag(BlockTags.PLANKS)
+                .blockstate((c, p) -> p.simpleBlock(c.getEntry(), p.models()
+                        .withExistingParent(c.getName(), Qook.asResource("block/vertical_planks"))
+                        .texture("all", Qook.asResource("block/" + name + "_planks"))
+                ))
+                .lang("Vertical " + capitalizedName + " Planks")
+                .onRegister(flammable ? c -> FlammableBlockRegistry.getDefaultInstance().add(c, 30, 60) : null)
+                .item()
                 .build()
                 .register();
     }

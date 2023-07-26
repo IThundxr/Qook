@@ -4,6 +4,7 @@
   "package": "dev.ithundxr.qook.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "LadderBlockMixin"
   ],
   "client": [
     "PlayerInfoMixin"

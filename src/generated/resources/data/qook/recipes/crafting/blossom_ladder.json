@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "qook:blossom_planks"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "S S",
+    "SBS",
+    "S S"
+  ],
+  "result": {
+    "count": 4,
+    "item": "qook:blossom_ladder"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,waterlogged=false": {
+      "model": "qook:block/blossom_ladder",
+      "y": 90
+    },
+    "facing=east,waterlogged=true": {
+      "model": "qook:block/blossom_ladder",
+      "y": 90
+    },
+    "facing=north,waterlogged=false": {
+      "model": "qook:block/blossom_ladder"
+    },
+    "facing=north,waterlogged=true": {
+      "model": "qook:block/blossom_ladder"
+    },
+    "facing=south,waterlogged=false": {
+      "model": "qook:block/blossom_ladder",
+      "y": 180
+    },
+    "facing=south,waterlogged=true": {
+      "model": "qook:block/blossom_ladder",
+      "y": 180
+    },
+    "facing=west,waterlogged=false": {
+      "model": "qook:block/blossom_ladder",
+      "y": 270
+    },
+    "facing=west,waterlogged=true": {
+      "model": "qook:block/blossom_ladder",
+      "y": 270
+    }
+  }
+}

@@ -2,11 +2,14 @@
 
 	"_": "->------------------------]  Game Elements  [------------------------<-",
 
+	"block.qook.blossom_button": "Blossom Button",
 	"block.qook.blossom_door": "Blossom Door",
 	"block.qook.blossom_fence": "Blossom Fence",
 	"block.qook.blossom_fence_gate": "Blossom Fence Gate",
+	"block.qook.blossom_ladder": "Blossom Ladder",
 	"block.qook.blossom_log": "Blossom Log",
 	"block.qook.blossom_planks": "Blossom Planks",
+	"block.qook.blossom_pressure_plate": "Blossom Pressure Plate",
 	"block.qook.blossom_slabs": "Blossom Slabs",
 	"block.qook.blossom_stairs": "Blossom Stairs",
 	"block.qook.blossom_trapdoor": "Blossom Trapdoor",
@@ -18,6 +21,7 @@
 	"block.qook.red_blossom_leaves": "Fiery Blossom Leaves",
 	"block.qook.stripped_blossom_log": "Stripped Blossom Log",
 	"block.qook.stripped_blossom_wood": "Stripped Blossom Wood",
+	"block.qook.vertical_blossom_planks": "Vertical Blossom Planks",
 	"block.qook.yellow_blossom_leaves": "Sunny Blossom Leaves",
 
 	"itemGroup.qook.main": "Qook",

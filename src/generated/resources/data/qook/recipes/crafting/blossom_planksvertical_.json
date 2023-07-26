@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "qook:vertical_blossom_planks"
+    }
+  },
+  "pattern": [
+    "   ",
+    " B "
+  ],
+  "result": {
+    "item": "qook:blossom_planks"
+  },
+  "show_notification": true
+}

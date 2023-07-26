@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "qook:blossom_planks"
+    }
+  },
+  "pattern": [
+    "   ",
+    "BB "
+  ],
+  "result": {
+    "item": "qook:blossom_pressure_plate"
+  },
+  "show_notification": true
+}

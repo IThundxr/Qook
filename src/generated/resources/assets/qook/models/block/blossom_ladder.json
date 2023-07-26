@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/ladder",
+  "textures": {
+    "particle": "qook:block/blossom_log",
+    "texture": "qook:block/blossom_log"
+  }
+}
