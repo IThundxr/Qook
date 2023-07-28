@@ -37,10 +37,15 @@
   "block.qook.blossom_trapdoor": "ɹoopdɐɹ⟘ ɯossoןᗺ",
   "block.qook.blossom_wood": "pooM ɯossoןᗺ",
   "block.qook.blue_blossom_leaves": "sǝʌɐǝꞀ ɯossoןᗺ ʎʇsoɹℲ",
+  "block.qook.blue_blossom_sapling": "buıןdɐS ɯossoןᗺ ʎʇsoɹℲ",
   "block.qook.lavender_blossom_leaves": "sǝʌɐǝꞀ ɯossoןᗺ ǝuǝɹǝS",
+  "block.qook.lavender_blossom_sapling": "buıןdɐS ɯossoןᗺ ǝuǝɹǝS",
   "block.qook.orange_blossom_leaves": "sǝʌɐǝꞀ ɯossoןᗺ ɯɹɐM",
+  "block.qook.orange_blossom_sapling": "buıןdɐS ɯossoןᗺ ɯɹɐM",
   "block.qook.pink_blossom_leaves": "sǝʌɐǝꞀ ɯossoןᗺ ʇǝǝʍS",
+  "block.qook.pink_blossom_sapling": "buıןdɐS ɯossoןᗺ ʇǝǝʍS",
   "block.qook.red_blossom_leaves": "sǝʌɐǝꞀ ɯossoןᗺ ʎɹǝıℲ",
+  "block.qook.red_blossom_sapling": "buıןdɐS ɯossoןᗺ ʎɹǝıℲ",
   "block.qook.stripped_ancient_log": "boꞀ ʇuǝıɔuⱯ pǝddıɹʇS",
   "block.qook.stripped_ancient_wood": "pooM ʇuǝıɔuⱯ pǝddıɹʇS",
   "block.qook.stripped_azalea_log": "boꞀ ɐǝןɐzⱯ pǝddıɹʇS",
@@ -50,5 +55,6 @@
   "block.qook.vertical_ancient_planks": "sʞuɐןԀ ʇuǝıɔuⱯ ןɐɔıʇɹǝΛ",
   "block.qook.vertical_azalea_planks": "sʞuɐןԀ ɐǝןɐzⱯ ןɐɔıʇɹǝΛ",
   "block.qook.vertical_blossom_planks": "sʞuɐןԀ ɯossoןᗺ ןɐɔıʇɹǝΛ",
-  "block.qook.yellow_blossom_leaves": "sǝʌɐǝꞀ ɯossoןᗺ ʎuunS"
+  "block.qook.yellow_blossom_leaves": "sǝʌɐǝꞀ ɯossoןᗺ ʎuunS",
+  "block.qook.yellow_blossom_sapling": "buıןdɐS ɯossoןᗺ ʎuunS"
 }

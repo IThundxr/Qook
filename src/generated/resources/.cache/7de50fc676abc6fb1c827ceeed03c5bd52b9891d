@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-28T11:19:40.863724947	Qook/Qook's Recipes
+// 1.20.1	2023-07-28T11:45:14.12099928	Qook/Qook's Recipes
 91c2341e9d0ed41a9a18c1b8c98cbce26931610d data/qook/advancements/recipes/misc/crafting/blossom_wood.json
 20729189f91b55bb203b377d3d2bd35ca24cdbfd data/qook/advancements/recipes/misc/crafting/azalea_button.json
 27e5c30e974c1c641e3f7bc22309af36b8ad9b46 data/qook/advancements/recipes/misc/crafting/ancient_ladder.json
@@ -14,8 +14,8 @@ a2530531396a3e5442f756411857a900cccb936e data/qook/recipes/crafting/vertical_anc
 c15e251f22d46e0a09032339fb7463ac3e2dc741 data/qook/recipes/crafting/blossom_wood.json
 9e7ba8defe968b2a9195a59292ab20842e68f605 data/qook/advancements/recipes/misc/crafting/azalea_wood.json
 74b96b077edc8e9d2b067926446dbdb238ea15f7 data/qook/recipes/crafting/blossom_planks_from_vertical.json
-a75083b9392c31329f526b843ba730fc7cdf89a8 data/qook/recipes/crafting/stripped_blossom_wood.json
 9f1693a286134f8796981e26c35ef3db768ce1d2 data/qook/recipes/crafting/blossom_planks.json
+a75083b9392c31329f526b843ba730fc7cdf89a8 data/qook/recipes/crafting/stripped_blossom_wood.json
 4e677602adcd0da4dd1a7b6d434a452c4d68c7c0 data/qook/recipes/crafting/blossom_fence_gate.json
 23ad80dca0b4389f3d50b0cbaab8ef9c6033ba9c data/qook/recipes/crafting/blossom_fence.json
 86c90f76d7e866c31620fa3845ad7e86cd004193 data/qook/recipes/crafting/ancient_pressure_plate.json
@@ -79,7 +79,7 @@ de83820c0d15eca635cf65ef90036a0e7e271765 data/qook/recipes/crafting/blossom_trap
 1c3737eba8a7f48d587cf16d5a24c98b54fe7724 data/qook/recipes/crafting/ancient_planks_from_vertical.json
 bcb02437ca8dbd433f9b565a3fa0b39e51710aa5 data/qook/advancements/recipes/misc/crafting/ancient_fence.json
 2cb041b73e87ce5cb1b14fa9399fc9e28c742375 data/qook/recipes/crafting/ancient_trapdoor.json
-35b1f15abbcd65b39253aee848e61def2ff80ec5 data/qook/advancements/recipes/misc/crafting/blossom_button.json
 676295c01dc9cacbc53dd5f886563fa4fa3d1e25 data/qook/recipes/crafting/blossom_pressure_plate.json
+35b1f15abbcd65b39253aee848e61def2ff80ec5 data/qook/advancements/recipes/misc/crafting/blossom_button.json
 1511b5c9baf98760cd0fef7df1fa6751335b53a5 data/qook/advancements/recipes/misc/crafting/azalea_door.json
 e26f91de67ce54144a5a0b6b626d0d607d71e77a data/qook/recipes/crafting/azalea_fence.json

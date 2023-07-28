@@ -40,10 +40,15 @@
 	"block.qook.blossom_trapdoor": "Blossom Trapdoor",
 	"block.qook.blossom_wood": "Blossom Wood",
 	"block.qook.blue_blossom_leaves": "Frosty Blossom Leaves",
+	"block.qook.blue_blossom_sapling": "Frosty Blossom Sapling",
 	"block.qook.lavender_blossom_leaves": "Serene Blossom Leaves",
+	"block.qook.lavender_blossom_sapling": "Serene Blossom Sapling",
 	"block.qook.orange_blossom_leaves": "Warm Blossom Leaves",
+	"block.qook.orange_blossom_sapling": "Warm Blossom Sapling",
 	"block.qook.pink_blossom_leaves": "Sweet Blossom Leaves",
+	"block.qook.pink_blossom_sapling": "Sweet Blossom Sapling",
 	"block.qook.red_blossom_leaves": "Fiery Blossom Leaves",
+	"block.qook.red_blossom_sapling": "Fiery Blossom Sapling",
 	"block.qook.stripped_ancient_log": "Stripped Ancient Log",
 	"block.qook.stripped_ancient_wood": "Stripped Ancient Wood",
 	"block.qook.stripped_azalea_log": "Stripped Azalea Log",
@@ -54,6 +59,7 @@
 	"block.qook.vertical_azalea_planks": "Vertical Azalea Planks",
 	"block.qook.vertical_blossom_planks": "Vertical Blossom Planks",
 	"block.qook.yellow_blossom_leaves": "Sunny Blossom Leaves",
+	"block.qook.yellow_blossom_sapling": "Sunny Blossom Sapling",
 
 	"itemGroup.qook.main": "Qook",
 

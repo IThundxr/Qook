@@ -14,6 +14,8 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.grower.AbstractTreeGrower;
+import net.minecraft.world.level.block.grower.AcaciaTreeGrower;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
@@ -115,6 +117,15 @@ public class QookBlocks {
 
 
 
+    // Blossom Saplings
+    public static final BlockEntry<SaplingBlock> BLUE_BLOSSOM_SAPLING = makeSaplingBlock("blue", "Frosty", MapColor.COLOR_LIGHT_BLUE, new AcaciaTreeGrower());
+    public static final BlockEntry<SaplingBlock> LAVENDER_BLOSSOM_SAPLING = makeSaplingBlock("lavender", "Serene", MapColor.COLOR_PINK, new AcaciaTreeGrower());
+    public static final BlockEntry<SaplingBlock> ORANGE_BLOSSOM_SAPLING = makeSaplingBlock("orange", "Warm", MapColor.TERRACOTTA_ORANGE, new AcaciaTreeGrower());
+    public static final BlockEntry<SaplingBlock> PINK_BLOSSOM_SAPLING = makeSaplingBlock("pink", "Sweet", MapColor.COLOR_PINK, new AcaciaTreeGrower());
+    public static final BlockEntry<SaplingBlock> YELLOW_BLOSSOM_SAPLING = makeSaplingBlock("yellow", "Sunny", MapColor.COLOR_YELLOW, new AcaciaTreeGrower());
+    public static final BlockEntry<SaplingBlock> RED_BLOSSOM_SAPLING = makeSaplingBlock("red", "Fiery", MapColor.COLOR_RED, new AcaciaTreeGrower());
+
+
     // Blossom Leaves
     public static final BlockEntry<BlossomLeavesBlock> BLUE_BLOSSOM_LEAVES = makeBlossomLeavesBlock("blue", "Frosty", MapColor.COLOR_LIGHT_BLUE, true);
     public static final BlockEntry<BlossomLeavesBlock> LAVENDER_BLOSSOM_LEAVES = makeBlossomLeavesBlock("lavender", "Serene", MapColor.COLOR_PINK, true);
@@ -179,7 +190,20 @@ public class QookBlocks {
 
 
 
-
+    private static BlockEntry<SaplingBlock> makeSaplingBlock(String color, String name, MapColor mapColor, AbstractTreeGrower treeGrower) {
+        return REGISTRATE.block(color + "_blossom_sapling" , p -> new SaplingBlock(treeGrower, p))
+                .initialProperties(() -> Blocks.OAK_SAPLING)
+                .properties(p -> p
+                        .mapColor(mapColor)
+                )
+                .addLayer(() -> RenderType::cutout)
+                .blockstate((c, p) -> p.simpleBlock(c.get(), p.models().cross(c.getName(), p.blockTexture(c.get()))))
+                .lang(name + " Blossom Sapling")
+                .item()
+                .model((c, p) -> p.blockSprite(c))
+                .build()
+                .register();
+    }
 
     private static BlockEntry<LeavesBlock> makeLeavesBlock(String name, MapColor mapColor, boolean flammable) {
         String capitalizedName = name.substring(0, 1).toUpperCase() + name.substring(1);
@@ -234,18 +258,7 @@ public class QookBlocks {
                         )
                 )
                 .tag(BlockTags.LOGS)
-                .blockstate((c, p) -> p.getVariantBuilder(c.get())
-                        .forAllStates((state) -> ConfiguredModel.builder()
-                                        .modelFile(p.models().cubeColumn(c.getName(),
-                                                        Qook.asResource("block/" + name + "_log"),
-                                                        Qook.asResource("block/" + name + "_log_top")
-                                                )
-                                        )
-                                .rotationX(state.getValue(RotatedPillarBlock.AXIS) != Direction.Axis.Y ? 90 : 0)
-                                .rotationY(state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.X ? 90 : 0)
-                                .build()
-                        )
-                )
+                .blockstate((c, p) -> p.logBlock(c.get()))
                 .onRegister(flammable ? c -> FlammableBlockRegistry.getDefaultInstance().add(c, 5, 5) : null)
                 .lang(capitalizedName + " Log")
                 .item()
@@ -263,18 +276,7 @@ public class QookBlocks {
                         .mapColor(color)
                 )
                 .tag(BlockTags.LOGS)
-                .blockstate((c, p) -> p.getVariantBuilder(c.get())
-                        .forAllStates((state) -> ConfiguredModel.builder()
-                                .modelFile(p.models().cubeColumn(c.getName(),
-                                                Qook.asResource("block/stripped_" + name + "_log"),
-                                                Qook.asResource("block/stripped_" + name + "_log_top")
-                                        )
-                                )
-                                .rotationX(state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? 0 : 90)
-                                .rotationY(state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.X ? 90 : 0)
-                                .build()
-                        )
-                )
+                .blockstate((c, p) -> p.logBlock(c.get()))
                 .onRegister(flammable ? c -> FlammableBlockRegistry.getDefaultInstance().add(c, 5, 5) : null)
                 .lang("Stripped " + capitalizedName + " Log")
                 .item()
