@@ -1,3 +1,6 @@
 {
-  "parent": "qook:block/orange_blossom_sapling"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "qook:block/orange_blossom_sapling"
+  }
 }

@@ -1,6 +1,8 @@
 package dev.ithundxr.qook;
 
+import dev.ithundxr.qook.datagen.world.QookWorldGenerator;
 import dev.ithundxr.qook.registry.*;
+import dev.ithundxr.qook.world.gen.QookWorldGeneration;
 
 public class ModSetup {
     public static void register() {
@@ -17,6 +19,9 @@ public class ModSetup {
 
         // Register Registrate (Registers all items and blocks
         Qook.REGISTRATE.register();
+
+        // Register World Generation
+        QookWorldGeneration.generateQookWorldGen();
 
         // Register Strippable Blocks
         QookStrippableBlocks.register();

@@ -5,17 +5,20 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import dev.ithundxr.qook.Qook;
 import dev.ithundxr.qook.block.BlossomLeavesBlock;
 import dev.ithundxr.qook.util.BlockStateHelper;
+import dev.ithundxr.qook.world.tree.AbstractBlossomTreeGrower;
 import io.github.fabricators_of_create.porting_lib.models.generators.ConfiguredModel;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
-import net.minecraft.world.level.block.grower.AcaciaTreeGrower;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
@@ -117,15 +120,6 @@ public class QookBlocks {
 
 
 
-    // Blossom Saplings
-    public static final BlockEntry<SaplingBlock> BLUE_BLOSSOM_SAPLING = makeSaplingBlock("blue", "Frosty", MapColor.COLOR_LIGHT_BLUE, new AcaciaTreeGrower());
-    public static final BlockEntry<SaplingBlock> LAVENDER_BLOSSOM_SAPLING = makeSaplingBlock("lavender", "Serene", MapColor.COLOR_PINK, new AcaciaTreeGrower());
-    public static final BlockEntry<SaplingBlock> ORANGE_BLOSSOM_SAPLING = makeSaplingBlock("orange", "Warm", MapColor.TERRACOTTA_ORANGE, new AcaciaTreeGrower());
-    public static final BlockEntry<SaplingBlock> PINK_BLOSSOM_SAPLING = makeSaplingBlock("pink", "Sweet", MapColor.COLOR_PINK, new AcaciaTreeGrower());
-    public static final BlockEntry<SaplingBlock> YELLOW_BLOSSOM_SAPLING = makeSaplingBlock("yellow", "Sunny", MapColor.COLOR_YELLOW, new AcaciaTreeGrower());
-    public static final BlockEntry<SaplingBlock> RED_BLOSSOM_SAPLING = makeSaplingBlock("red", "Fiery", MapColor.COLOR_RED, new AcaciaTreeGrower());
-
-
     // Blossom Leaves
     public static final BlockEntry<BlossomLeavesBlock> BLUE_BLOSSOM_LEAVES = makeBlossomLeavesBlock("blue", "Frosty", MapColor.COLOR_LIGHT_BLUE, true);
     public static final BlockEntry<BlossomLeavesBlock> LAVENDER_BLOSSOM_LEAVES = makeBlossomLeavesBlock("lavender", "Serene", MapColor.COLOR_PINK, true);
@@ -175,6 +169,14 @@ public class QookBlocks {
     // Vertical Blossom Planks
     public static final BlockEntry<Block> VERTICAL_BLOSSOM_PLANKS = makeVerticalPlanksBlock("blossom", MapColor.COLOR_RED, true);
 
+    // Blossom Saplings
+    public static final BlockEntry<SaplingBlock> BLUE_BLOSSOM_SAPLING = makeSaplingBlock("blue", "Frosty", MapColor.COLOR_LIGHT_BLUE, new AbstractBlossomTreeGrower("blue"));
+    public static final BlockEntry<SaplingBlock> LAVENDER_BLOSSOM_SAPLING = makeSaplingBlock("lavender", "Serene", MapColor.COLOR_PINK, new AbstractBlossomTreeGrower("lavender"));
+    public static final BlockEntry<SaplingBlock> ORANGE_BLOSSOM_SAPLING = makeSaplingBlock("orange", "Warm", MapColor.TERRACOTTA_ORANGE, new AbstractBlossomTreeGrower("orange"));
+    public static final BlockEntry<SaplingBlock> PINK_BLOSSOM_SAPLING = makeSaplingBlock("pink", "Sweet", MapColor.COLOR_PINK, new AbstractBlossomTreeGrower("pink"));
+    public static final BlockEntry<SaplingBlock> YELLOW_BLOSSOM_SAPLING = makeSaplingBlock("yellow", "Sunny", MapColor.COLOR_YELLOW, new AbstractBlossomTreeGrower("yellow"));
+    public static final BlockEntry<SaplingBlock> RED_BLOSSOM_SAPLING = makeSaplingBlock("red", "Fiery", MapColor.COLOR_RED, new AbstractBlossomTreeGrower("red"));
+
 
 
 
@@ -190,16 +192,18 @@ public class QookBlocks {
 
 
 
-    private static BlockEntry<SaplingBlock> makeSaplingBlock(String color, String name, MapColor mapColor, AbstractTreeGrower treeGrower) {
+    static BlockEntry<SaplingBlock> makeSaplingBlock(String color, String name, MapColor mapColor, AbstractTreeGrower treeGrower) {
         return REGISTRATE.block(color + "_blossom_sapling" , p -> new SaplingBlock(treeGrower, p))
                 .initialProperties(() -> Blocks.OAK_SAPLING)
                 .properties(p -> p
                         .mapColor(mapColor)
                 )
+                .tag(BlockTags.SAPLINGS)
                 .addLayer(() -> RenderType::cutout)
                 .blockstate((c, p) -> p.simpleBlock(c.get(), p.models().cross(c.getName(), p.blockTexture(c.get()))))
                 .lang(name + " Blossom Sapling")
                 .item()
+                .tag(ItemTags.SAPLINGS)
                 .model((c, p) -> p.blockSprite(c))
                 .build()
                 .register();
