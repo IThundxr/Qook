@@ -28,6 +28,37 @@ public class QookRecipeGen extends QookRecipeProvider {
      */
 
     GeneratedRecipe
+    // Ancient
+
+    ANCIENT_WOOD = createWoodRecipe(QookBlocks.ANCIENT_WOOD, QookBlocks.ANCIENT_LOG),
+
+    STRIPPED_ANCIENT_WOOD = createWoodRecipe(QookBlocks.STRIPPED_ANCIENT_WOOD, QookBlocks.STRIPPED_ANCIENT_LOG),
+
+    ANCIENT_PLANKS = createPlanksRecipe(QookBlocks.ANCIENT_PLANKS, QookBlocks.ANCIENT_LOG, QookTags.QookItemTags.ANCIENT_LOGS),
+
+    ANCIENT_PLANKS_FROM_VERT = createVerticalPlanksintoPlanksRecipe(QookBlocks.ANCIENT_PLANKS, QookBlocks.VERTICAL_ANCIENT_PLANKS),
+
+    ANCIENT_SLABS = createSlabsRecipe(QookBlocks.ANCIENT_SLABS, QookBlocks.ANCIENT_PLANKS),
+
+    ANCIENT_STAIRS = createStairsRecipe(QookBlocks.ANCIENT_STAIRS, QookBlocks.ANCIENT_PLANKS),
+
+    ANCIENT_FENCE = createFenceRecipe(QookBlocks.ANCIENT_FENCE, QookBlocks.ANCIENT_PLANKS),
+
+    ANCIENT_FENCE_GATE = createFenceGateRecipe(QookBlocks.ANCIENT_FENCE_GATE, QookBlocks.ANCIENT_PLANKS),
+
+    ANCIENT_DOOR = createDoorRecipe(QookBlocks.ANCIENT_DOOR, QookBlocks.ANCIENT_PLANKS),
+
+    ANCIENT_TRAPDOOR = createTrapDoorRecipe(QookBlocks.ANCIENT_TRAPDOOR, QookBlocks.ANCIENT_PLANKS),
+
+    ANCIENT_BUTTON = createButtonRecipe(QookBlocks.ANCIENT_BUTTON, QookBlocks.ANCIENT_PLANKS),
+
+    ANCIENT_PRESSURE_PLATE = createPressurePlateRecipe(QookBlocks.ANCIENT_PRESSURE_PLATE, QookBlocks.ANCIENT_PLANKS),
+
+    ANCIENT_LADDER = createLadderRecipe(QookBlocks.ANCIENT_LADDER, QookBlocks.ANCIENT_PLANKS),
+
+    VERTICAL_ANCIENT_PLANKS = createVerticalPlanksRecipe(QookBlocks.VERTICAL_ANCIENT_PLANKS, QookBlocks.ANCIENT_PLANKS),
+
+    // Blossom
 
     BLOSSOM_WOOD = createWoodRecipe(QookBlocks.BLOSSOM_WOOD, QookBlocks.BLOSSOM_LOG),
 

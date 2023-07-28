@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "qook:block/ancient_slabs"
+    },
+    "type=double": {
+      "model": "qook:block/ancient_planks"
+    },
+    "type=top": {
+      "model": "qook:block/ancient_slabs_top"
+    }
+  }
+}

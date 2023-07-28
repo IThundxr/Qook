@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "qook:ancient_planks",
+    "qook:vertical_ancient_planks",
     "qook:blossom_planks",
     "qook:vertical_blossom_planks"
   ]

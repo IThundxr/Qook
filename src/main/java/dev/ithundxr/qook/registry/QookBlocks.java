@@ -23,6 +23,49 @@ import net.minecraft.world.level.material.MapColor;
 public class QookBlocks {
     private static final Registrate REGISTRATE = Qook.REGISTRATE;
 
+    // Ancient Logs
+    public static final BlockEntry<RotatedPillarBlock> ANCIENT_LOG = makeLogBlock("ancient", MapColor.COLOR_RED, MapColor.COLOR_BROWN, QookTags.QookItemTags.ANCIENT_LOGS, true);
+    public static final BlockEntry<RotatedPillarBlock> STRIPPED_ANCIENT_LOG = makeStrippedLogBlock("ancient", MapColor.COLOR_RED, QookTags.QookItemTags.ANCIENT_LOGS, true);
+
+    // Ancient Woods
+    public static final BlockEntry<RotatedPillarBlock> ANCIENT_WOOD = makeWoodBlock("ancient", MapColor.COLOR_BROWN, QookTags.QookItemTags.ANCIENT_LOGS, true);
+    public static final BlockEntry<RotatedPillarBlock> STRIPPED_ANCIENT_WOOD = makeStrippedWoodBlock("ancient", MapColor.COLOR_RED, QookTags.QookItemTags.ANCIENT_LOGS, true);
+
+    // Ancient Planks
+    public static final BlockEntry<Block> ANCIENT_PLANKS = makePlanksBlock("ancient", MapColor.COLOR_RED, true);
+
+    // Ancient Slabs
+    public static final BlockEntry<SlabBlock> ANCIENT_SLABS = makeSlabsBlock("ancient", MapColor.COLOR_RED, true);
+
+    // Ancient Stairs
+    public static final BlockEntry<StairBlock> ANCIENT_STAIRS = makeStairsBlock("ancient", MapColor.COLOR_RED, true);
+
+    // Ancient Fence
+    public static final BlockEntry<FenceBlock> ANCIENT_FENCE = makeFenceBlock("ancient", MapColor.COLOR_RED, true);
+
+    // Ancient Fence Gate
+    public static final BlockEntry<FenceGateBlock> ANCIENT_FENCE_GATE = makeFenceGateBlock("ancient", MapColor.COLOR_RED, true);
+
+    // Ancient Door
+    public static final BlockEntry<DoorBlock> ANCIENT_DOOR = makeDoorBlock("ancient", MapColor.COLOR_RED, true);
+
+    // Ancient Trapdoor
+    public static final BlockEntry<TrapDoorBlock> ANCIENT_TRAPDOOR = makeTrapDoorBlock("ancient", MapColor.COLOR_RED, true);
+
+    // Ancient Button
+    public static final BlockEntry<ButtonBlock> ANCIENT_BUTTON = makeButtonBlock("ancient", MapColor.COLOR_RED);
+
+    // Ancient Pressure Plate
+    public static final BlockEntry<PressurePlateBlock> ANCIENT_PRESSURE_PLATE = makePressurePlateBlock("ancient", MapColor.COLOR_RED, true);
+
+    // Ancient Ladder
+    public static final BlockEntry<LadderBlock> ANCIENT_LADDER = makeLadderBlock("ancient", MapColor.COLOR_RED);
+
+    // Vertical Ancient Planks
+    public static final BlockEntry<Block> VERTICAL_ANCIENT_PLANKS = makeVerticalPlanksBlock("ancient", MapColor.COLOR_RED, true);
+
+
+
     // Blossom Leaves
     public static final BlockEntry<BlossomLeavesBlock> BLUE_BLOSSOM_LEAVES = makeBlossomLeaves("blue", "Frosty", MapColor.COLOR_LIGHT_BLUE, true);
     public static final BlockEntry<BlossomLeavesBlock> LAVENDER_BLOSSOM_LEAVES = makeBlossomLeaves("lavender", "Serene", MapColor.COLOR_PINK, true);

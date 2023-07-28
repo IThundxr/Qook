@@ -1,4 +1,16 @@
 {
+  "block.qook.ancient_button": "uoʇʇnᗺ ʇuǝıɔuⱯ",
+  "block.qook.ancient_door": "ɹooᗡ ʇuǝıɔuⱯ",
+  "block.qook.ancient_fence": "ǝɔuǝℲ ʇuǝıɔuⱯ",
+  "block.qook.ancient_fence_gate": "ǝʇɐ⅁ ǝɔuǝℲ ʇuǝıɔuⱯ",
+  "block.qook.ancient_ladder": "ɹǝppɐꞀ ʇuǝıɔuⱯ",
+  "block.qook.ancient_log": "boꞀ ʇuǝıɔuⱯ",
+  "block.qook.ancient_planks": "sʞuɐןԀ ʇuǝıɔuⱯ",
+  "block.qook.ancient_pressure_plate": "ǝʇɐןԀ ǝɹnssǝɹԀ ʇuǝıɔuⱯ",
+  "block.qook.ancient_slabs": "sqɐןS ʇuǝıɔuⱯ",
+  "block.qook.ancient_stairs": "sɹıɐʇS ʇuǝıɔuⱯ",
+  "block.qook.ancient_trapdoor": "ɹoopdɐɹ⟘ ʇuǝıɔuⱯ",
+  "block.qook.ancient_wood": "pooM ʇuǝıɔuⱯ",
   "block.qook.blossom_button": "uoʇʇnᗺ ɯossoןᗺ",
   "block.qook.blossom_door": "ɹooᗡ ɯossoןᗺ",
   "block.qook.blossom_fence": "ǝɔuǝℲ ɯossoןᗺ",
@@ -16,8 +28,11 @@
   "block.qook.orange_blossom_leaves": "sǝʌɐǝꞀ ɯossoןᗺ ɯɹɐM",
   "block.qook.pink_blossom_leaves": "sǝʌɐǝꞀ ɯossoןᗺ ʇǝǝʍS",
   "block.qook.red_blossom_leaves": "sǝʌɐǝꞀ ɯossoןᗺ ʎɹǝıℲ",
+  "block.qook.stripped_ancient_log": "boꞀ ʇuǝıɔuⱯ pǝddıɹʇS",
+  "block.qook.stripped_ancient_wood": "pooM ʇuǝıɔuⱯ pǝddıɹʇS",
   "block.qook.stripped_blossom_log": "boꞀ ɯossoןᗺ pǝddıɹʇS",
   "block.qook.stripped_blossom_wood": "pooM ɯossoןᗺ pǝddıɹʇS",
+  "block.qook.vertical_ancient_planks": "sʞuɐןԀ ʇuǝıɔuⱯ ןɐɔıʇɹǝΛ",
   "block.qook.vertical_blossom_planks": "sʞuɐןԀ ɯossoןᗺ ןɐɔıʇɹǝΛ",
   "block.qook.yellow_blossom_leaves": "sǝʌɐǝꞀ ɯossoןᗺ ʎuunS"
 }

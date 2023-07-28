@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "qook:ancient_trapdoor",
+    "qook:ancient_button",
     "qook:blossom_trapdoor",
     "qook:blossom_button"
   ]

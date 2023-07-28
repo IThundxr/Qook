@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "qook:vertical_ancient_planks"
+    }
+  },
+  "pattern": [
+    "   ",
+    " B "
+  ],
+  "result": {
+    "item": "qook:ancient_planks"
+  },
+  "show_notification": true
+}

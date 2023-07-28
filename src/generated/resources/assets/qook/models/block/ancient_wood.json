@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "qook:block/ancient_log",
+    "side": "qook:block/ancient_log"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "qook:ancient_log",
+    "qook:stripped_ancient_log",
+    "qook:ancient_wood",
+    "qook:stripped_ancient_wood"
+  ]
+}

@@ -2,6 +2,18 @@
 
 	"_": "->------------------------]  Game Elements  [------------------------<-",
 
+	"block.qook.ancient_button": "Ancient Button",
+	"block.qook.ancient_door": "Ancient Door",
+	"block.qook.ancient_fence": "Ancient Fence",
+	"block.qook.ancient_fence_gate": "Ancient Fence Gate",
+	"block.qook.ancient_ladder": "Ancient Ladder",
+	"block.qook.ancient_log": "Ancient Log",
+	"block.qook.ancient_planks": "Ancient Planks",
+	"block.qook.ancient_pressure_plate": "Ancient Pressure Plate",
+	"block.qook.ancient_slabs": "Ancient Slabs",
+	"block.qook.ancient_stairs": "Ancient Stairs",
+	"block.qook.ancient_trapdoor": "Ancient Trapdoor",
+	"block.qook.ancient_wood": "Ancient Wood",
 	"block.qook.blossom_button": "Blossom Button",
 	"block.qook.blossom_door": "Blossom Door",
 	"block.qook.blossom_fence": "Blossom Fence",
@@ -19,12 +31,13 @@
 	"block.qook.orange_blossom_leaves": "Warm Blossom Leaves",
 	"block.qook.pink_blossom_leaves": "Sweet Blossom Leaves",
 	"block.qook.red_blossom_leaves": "Fiery Blossom Leaves",
+	"block.qook.stripped_ancient_log": "Stripped Ancient Log",
+	"block.qook.stripped_ancient_wood": "Stripped Ancient Wood",
 	"block.qook.stripped_blossom_log": "Stripped Blossom Log",
 	"block.qook.stripped_blossom_wood": "Stripped Blossom Wood",
+	"block.qook.vertical_ancient_planks": "Vertical Ancient Planks",
 	"block.qook.vertical_blossom_planks": "Vertical Blossom Planks",
 	"block.qook.yellow_blossom_leaves": "Sunny Blossom Leaves",
-
-	"itemGroup.qook.main": "Qook",
 
 
 	"_": "->------------------------]  UI & Messages  [------------------------<-",

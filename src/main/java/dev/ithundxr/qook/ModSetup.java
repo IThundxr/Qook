@@ -1,7 +1,6 @@
 package dev.ithundxr.qook;
 
 import dev.ithundxr.qook.registry.*;
-import dev.ithundxr.qook.registry.util.*;
 
 public class ModSetup {
     public static void register() {

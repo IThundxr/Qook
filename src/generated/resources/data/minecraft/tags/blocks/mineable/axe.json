@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "qook:ancient_slabs",
+    "qook:ancient_stairs",
     "qook:blossom_slabs",
     "qook:blossom_stairs"
   ]

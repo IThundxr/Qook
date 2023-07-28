@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "qook:block/ancient_planks",
+    "side": "qook:block/ancient_planks",
+    "top": "qook:block/ancient_planks"
+  }
+}

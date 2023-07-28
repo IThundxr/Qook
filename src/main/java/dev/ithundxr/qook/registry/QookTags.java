@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.Block;
 public class QookTags {
     public static class QookItemTags {
         public static final TagKey<Item> BLOSSOM_LOGS = create("blossom_logs");
+        public static final TagKey<Item> ANCIENT_LOGS = create("ancient_logs");
 
         private static TagKey<Item> create(String name) {
             return TagKey.create(Registries.ITEM, Qook.asResource(name));
