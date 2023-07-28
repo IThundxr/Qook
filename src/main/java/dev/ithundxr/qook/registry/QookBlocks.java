@@ -18,6 +18,9 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 
+import java.util.function.Consumer;
+import java.util.function.Supplier;
+
 // Ignore these errors that have no purpose lol
 @SuppressWarnings({"unused", "SameParameterValue", "Duplicates"})
 public class QookBlocks {
@@ -47,10 +50,10 @@ public class QookBlocks {
     public static final BlockEntry<FenceGateBlock> ANCIENT_FENCE_GATE = makeFenceGateBlock("ancient", MapColor.COLOR_RED, true);
 
     // Ancient Door
-    public static final BlockEntry<DoorBlock> ANCIENT_DOOR = makeDoorBlock("ancient", MapColor.COLOR_RED, true);
+    public static final BlockEntry<DoorBlock> ANCIENT_DOOR = makeDoorBlockWithRenderType("ancient", MapColor.COLOR_RED, true, RenderType::cutout);
 
     // Ancient Trapdoor
-    public static final BlockEntry<TrapDoorBlock> ANCIENT_TRAPDOOR = makeTrapDoorBlock("ancient", MapColor.COLOR_RED, true);
+    public static final BlockEntry<TrapDoorBlock> ANCIENT_TRAPDOOR = makeTrapDoorBlockWithRenderType("ancient", MapColor.COLOR_RED, true, RenderType::cutout);
 
     // Ancient Button
     public static final BlockEntry<ButtonBlock> ANCIENT_BUTTON = makeButtonBlock("ancient", MapColor.COLOR_RED);
@@ -377,6 +380,26 @@ public class QookBlocks {
                 .register();
     }
 
+    private static BlockEntry<DoorBlock> makeDoorBlockWithRenderType(String name, MapColor color, boolean flammable, Supplier<RenderType> renderType) {
+        String capitalizedName = name.substring(0, 1).toUpperCase() + name.substring(1);
+
+        return REGISTRATE.block(name + "_door", p -> new DoorBlock(p, BlockSetType.OAK))
+                .initialProperties(() -> Blocks.OAK_DOOR)
+                .properties(p -> p
+                        .mapColor(color)
+                )
+                .tag(BlockTags.WOODEN_DOORS)
+                .loot((registrateBlockLootTables, doorBlock) -> registrateBlockLootTables.add(doorBlock, registrateBlockLootTables.createDoorTable(doorBlock)))
+                .blockstate((c, p) -> p.doorBlock(c.get(), Qook.asResource("block/" + name + "_door_bottom"), Qook.asResource("block/" + name + "_door_top")))
+                .addLayer(() -> renderType)
+                .onRegister(flammable ? c -> FlammableBlockRegistry.getDefaultInstance().add(c, 30, 60) : null)
+                .lang(capitalizedName + " Door")
+                .item()
+                .model((c, p) -> p.generated(c))
+                .build()
+                .register();
+    }
+
     private static BlockEntry<TrapDoorBlock> makeTrapDoorBlock(String name, MapColor color, boolean flammable) {
         String capitalizedName = name.substring(0, 1).toUpperCase() + name.substring(1);
 
@@ -387,6 +410,25 @@ public class QookBlocks {
                 )
                 .tag(BlockTags.WOODEN_TRAPDOORS)
                 .blockstate((c, p) -> p.trapdoorBlock(c.get(), Qook.asResource("block/" + name + "_trapdoor"), true))
+                .onRegister(flammable ? c -> FlammableBlockRegistry.getDefaultInstance().add(c, 30, 60) : null)
+                .lang(capitalizedName + " Trapdoor")
+                .item()
+                .model((c, p) -> p.trapdoorBottom(c.getName(), Qook.asResource( "block/" + name + "_trapdoor")))
+                .build()
+                .register();
+    }
+
+    private static BlockEntry<TrapDoorBlock> makeTrapDoorBlockWithRenderType(String name, MapColor color, boolean flammable, Supplier<RenderType> renderType) {
+        String capitalizedName = name.substring(0, 1).toUpperCase() + name.substring(1);
+
+        return REGISTRATE.block(name + "_trapdoor", p -> new TrapDoorBlock(p, BlockSetType.OAK))
+                .initialProperties(() -> Blocks.OAK_TRAPDOOR)
+                .properties(p -> p
+                        .mapColor(color)
+                )
+                .tag(BlockTags.WOODEN_TRAPDOORS)
+                .blockstate((c, p) -> p.trapdoorBlock(c.get(), Qook.asResource("block/" + name + "_trapdoor"), true))
+                .addLayer(() -> renderType)
                 .onRegister(flammable ? c -> FlammableBlockRegistry.getDefaultInstance().add(c, 30, 60) : null)
                 .lang(capitalizedName + " Trapdoor")
                 .item()
@@ -441,10 +483,9 @@ public class QookBlocks {
                 .tag(BlockTags.CLIMBABLE)
                 .blockstate((c, p) -> p.horizontalBlock(c.getEntry(), p.models()
                         .withExistingParent(c.getName(), "block/ladder")
-                            .texture("texture", Qook.asResource("block/" + name + "_log"))
-                            .texture("particle", Qook.asResource("block/" + name + "_log")
+                            .texture("texture", p.blockTexture(c.getEntry()))
+                            .texture("particle", p.blockTexture(c.getEntry()))
                         )
-                    )
                 )
                 .lang(capitalizedName + " Ladder")
                 .item()
