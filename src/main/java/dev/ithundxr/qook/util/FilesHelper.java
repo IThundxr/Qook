@@ -22,60 +22,6 @@ import java.util.Locale;
  * Taken From Create-Fabric
  */
 public class FilesHelper {
-
-    public static void createFolderIfMissing(String name) {
-        try {
-            Files.createDirectories(Paths.get(name));
-        } catch (IOException e) {
-            Qook.LOGGER.warn("Could not create Folder: {}", name);
-        }
-    }
-
-    public static String findFirstValidFilename(String name, Path folderPath, String extension) {
-        int index = 0;
-        String filename;
-        Path filepath;
-        do {
-            filename = slug(name) + ((index == 0) ? "" : "_" + index) + "." + extension;
-            index++;
-            filepath = folderPath.resolve(filename);
-        } while (Files.exists(filepath));
-        return filename;
-    }
-
-    public static String slug(String name) {
-        return name.toLowerCase(Locale.ROOT)
-                .replaceAll("\\W+", "_");
-    }
-
-    public static boolean saveTagCompoundAsJson(CompoundTag compound, String path) {
-        try {
-            Files.deleteIfExists(Paths.get(path));
-            JsonWriter writer = new JsonWriter(Files.newBufferedWriter(Paths.get(path), StandardOpenOption.CREATE));
-            writer.setIndent("  ");
-            Streams.write(JsonParser.parseString(compound.toString()), writer);
-            writer.close();
-            return true;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    public static boolean saveTagCompoundAsJsonCompact(CompoundTag compound, String path) {
-        try {
-            Files.deleteIfExists(Paths.get(path));
-            JsonWriter writer = new JsonWriter(Files.newBufferedWriter(Paths.get(path), StandardOpenOption.CREATE));
-            Streams.write(JsonParser.parseString(compound.toString()), writer);
-            writer.close();
-            return true;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return false;
-
-    }
-
     private static JsonElement loadJson(InputStream inputStream) {
         try {
             JsonReader reader = new JsonReader(new BufferedReader(new InputStreamReader(inputStream)));
@@ -93,14 +39,4 @@ public class FilesHelper {
     public static JsonElement loadJsonResource(String filepath) {
         return loadJson(ClassLoader.getSystemResourceAsStream(filepath));
     }
-
-    public static JsonElement loadJson(String filepath) {
-        try {
-            return loadJson(Files.newInputStream(Paths.get(filepath), StandardOpenOption.READ));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
 }

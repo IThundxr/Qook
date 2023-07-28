@@ -10,6 +10,7 @@
   },
   "license": "MIT",
   "icon": "assets/qook/icon.png",
+  "accessWidener": "qook.accesswidener",
   "environment": "*",
   "entrypoints": {
     "main": [

@@ -7,6 +7,6 @@ public class QookItems {
     private static final Registrate REGISTRATE = Qook.REGISTRATE;
 
     public static void register() {
-        // fabric: just load the class
+        Qook.LOGGER.info("Successfully Registered Items for {}", Qook.NAME);
     }
 }

@@ -36,7 +36,7 @@ public class QookCreativeModeTab {
                     .build());
 
     public static void register() {
-        // fabric: just load the class
+        Qook.LOGGER.info("Successfully Registered Creative Mode Tab for {}", Qook.NAME);
     }
 
     public static CreativeModeTab getBaseTab() {

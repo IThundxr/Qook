@@ -17,7 +17,9 @@ public class QookTags {
             return TagKey.create(Registries.ITEM, Qook.asResource(name));
         }
 
-        public static void register() {}
+        public static void register() {
+            Qook.LOGGER.info("Registered Item Tags for {}", Qook.NAME);
+        }
     }
 
     public static class QookBlockTags {
@@ -27,11 +29,15 @@ public class QookTags {
             return TagKey.create(Registries.BLOCK, Qook.asResource(name));
         }
 
-        public static void register() {}
+        public static void register() {
+            Qook.LOGGER.info("Registered Block Tags for {}", Qook.NAME);
+        }
     }
 
     public static void register() {
+        Qook.LOGGER.info("Started Registering Tags for {}", Qook.NAME);
         QookItemTags.register();
         QookBlockTags.register();
+        Qook.LOGGER.info("Successfully Registered Tags for {}", Qook.NAME);
     }
 }

@@ -43,6 +43,8 @@ sourceSets {
 }
 
 loom {
+    accessWidenerPath = file("src/main/resources/qook.accesswidener")
+
     runs {
         datagen {
             client()
