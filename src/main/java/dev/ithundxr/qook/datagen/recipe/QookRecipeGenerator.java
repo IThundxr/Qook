@@ -21,7 +21,7 @@ import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
 @SuppressWarnings({"unused", "SameParameterValue"})
-public class QookRecipeGen extends QookRecipeProvider {
+public class QookRecipeGenerator extends QookRecipeProvider {
 
     /*
      * Recipes are added through fields, so one can navigate to the right one easily
@@ -286,7 +286,7 @@ public class QookRecipeGen extends QookRecipeProvider {
         return create(result::get);
     }
 
-    public QookRecipeGen(FabricDataOutput pOutput) {
+    public QookRecipeGenerator(FabricDataOutput pOutput) {
         super(pOutput);
     }
 

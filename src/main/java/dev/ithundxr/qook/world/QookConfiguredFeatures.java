@@ -8,14 +8,17 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.SpruceFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 
 import java.util.OptionalInt;
 
@@ -27,6 +30,8 @@ public class QookConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> YELLOW_BLOSSOM_KEY = registerKey("yellow_blossom");
     public static final ResourceKey<ConfiguredFeature<?, ?>> RED_BLOSSOM_KEY = registerKey("red_blossom");
 
+//    public static final ResourceKey<ConfiguredFeature<?, ?>> ANCIENT_KEY = registerKey("ancient");
+
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         registerBlossomTree(context, BLUE_BLOSSOM_KEY, QookBlocks.BLUE_BLOSSOM_LEAVES);
         registerBlossomTree(context, LAVENDER_BLOSSOM_KEY, QookBlocks.LAVENDER_BLOSSOM_LEAVES);
@@ -34,6 +39,15 @@ public class QookConfiguredFeatures {
         registerBlossomTree(context, PINK_BLOSSOM_KEY, QookBlocks.PINK_BLOSSOM_LEAVES);
         registerBlossomTree(context, YELLOW_BLOSSOM_KEY, QookBlocks.YELLOW_BLOSSOM_LEAVES);
         registerBlossomTree(context, RED_BLOSSOM_KEY, QookBlocks.RED_BLOSSOM_LEAVES);
+
+//        register(context, ANCIENT_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+//                BlockStateProvider.simple(QookBlocks.ANCIENT_LOG.get()),
+//                new StraightTrunkPlacer(6, 1, 3),
+//                BlockStateProvider.simple(QookBlocks.ANCIENT_LEAVES.get()),
+//                new SpruceFoliagePlacer(UniformInt.of(1, 3), UniformInt.of(2, 3), UniformInt.of(3, 3)),
+//                new TwoLayersFeatureSize(3, 1, 3))
+//                .ignoreVines()
+//                .build());
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

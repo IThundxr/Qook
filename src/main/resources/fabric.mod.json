@@ -16,9 +16,6 @@
     "main": [
       "dev.ithundxr.qook.Qook"
     ],
-    "client": [
-      "dev.ithundxr.qook.QookClient"
-    ],
     "fabric-datagen": [
       "dev.ithundxr.qook.datagen.QookDataGeneration"
     ]

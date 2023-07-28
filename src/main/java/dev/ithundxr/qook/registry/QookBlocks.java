@@ -5,6 +5,7 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import dev.ithundxr.qook.Qook;
 import dev.ithundxr.qook.block.BlossomLeavesBlock;
 import dev.ithundxr.qook.util.BlockStateHelper;
+import dev.ithundxr.qook.world.tree.AbstractAncientTreeGrower;
 import dev.ithundxr.qook.world.tree.AbstractBlossomTreeGrower;
 import io.github.fabricators_of_create.porting_lib.models.generators.ConfiguredModel;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
@@ -17,8 +18,6 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
@@ -31,8 +30,11 @@ public class QookBlocks {
     private static final Registrate REGISTRATE = Qook.REGISTRATE;
 
 
+    // Ancient Sapling
+    public static final BlockEntry<SaplingBlock> ANCIENT_SAPLING = makeSaplingBlock("ancient", MapColor.TERRACOTTA_WHITE, new AbstractAncientTreeGrower());
+    
     // Ancient Leaves
-    public static final BlockEntry<LeavesBlock> ANCIENT_LEAVES = makeLeavesBlock("ancient", MapColor.TERRACOTTA_WHITE, true);
+    public static final BlockEntry<LeavesBlock> ANCIENT_LEAVES = makeLeavesBlock("ancient", MapColor.TERRACOTTA_WHITE, ANCIENT_SAPLING,true);
 
     // Ancient Logs
     public static final BlockEntry<RotatedPillarBlock> ANCIENT_LOG = makeLogBlock("ancient", MapColor.TERRACOTTA_WHITE, MapColor.TERRACOTTA_WHITE, QookTags.QookItemTags.ANCIENT_LOGS, true);
@@ -120,13 +122,23 @@ public class QookBlocks {
 
 
 
+    // BLossom Saplings
+    // Blossom Saplings
+    public static final BlockEntry<SaplingBlock> BLUE_BLOSSOM_SAPLING = makeBlossomSaplingBlock("blue", "Frosty", MapColor.COLOR_LIGHT_BLUE, new AbstractBlossomTreeGrower("blue"));
+    public static final BlockEntry<SaplingBlock> LAVENDER_BLOSSOM_SAPLING = makeBlossomSaplingBlock("lavender", "Serene", MapColor.COLOR_PINK, new AbstractBlossomTreeGrower("lavender"));
+    public static final BlockEntry<SaplingBlock> ORANGE_BLOSSOM_SAPLING = makeBlossomSaplingBlock("orange", "Warm", MapColor.TERRACOTTA_ORANGE, new AbstractBlossomTreeGrower("orange"));
+    public static final BlockEntry<SaplingBlock> PINK_BLOSSOM_SAPLING = makeBlossomSaplingBlock("pink", "Sweet", MapColor.COLOR_PINK, new AbstractBlossomTreeGrower("pink"));
+    public static final BlockEntry<SaplingBlock> YELLOW_BLOSSOM_SAPLING = makeBlossomSaplingBlock("yellow", "Sunny", MapColor.COLOR_YELLOW, new AbstractBlossomTreeGrower("yellow"));
+    public static final BlockEntry<SaplingBlock> RED_BLOSSOM_SAPLING = makeBlossomSaplingBlock("red", "Fiery", MapColor.COLOR_RED, new AbstractBlossomTreeGrower("red"));
+
+
     // Blossom Leaves
-    public static final BlockEntry<BlossomLeavesBlock> BLUE_BLOSSOM_LEAVES = makeBlossomLeavesBlock("blue", "Frosty", MapColor.COLOR_LIGHT_BLUE, true);
-    public static final BlockEntry<BlossomLeavesBlock> LAVENDER_BLOSSOM_LEAVES = makeBlossomLeavesBlock("lavender", "Serene", MapColor.COLOR_PINK, true);
-    public static final BlockEntry<BlossomLeavesBlock> ORANGE_BLOSSOM_LEAVES = makeBlossomLeavesBlock("orange", "Warm", MapColor.TERRACOTTA_ORANGE, true);
-    public static final BlockEntry<BlossomLeavesBlock> PINK_BLOSSOM_LEAVES = makeBlossomLeavesBlock("pink", "Sweet", MapColor.COLOR_PINK, true);
-    public static final BlockEntry<BlossomLeavesBlock> YELLOW_BLOSSOM_LEAVES = makeBlossomLeavesBlock("yellow", "Sunny", MapColor.COLOR_YELLOW, true);
-    public static final BlockEntry<BlossomLeavesBlock> RED_BLOSSOM_LEAVES = makeBlossomLeavesBlock("red", "Fiery", MapColor.COLOR_RED, true);
+    public static final BlockEntry<BlossomLeavesBlock> BLUE_BLOSSOM_LEAVES = makeBlossomLeavesBlock("blue", "Frosty", MapColor.COLOR_LIGHT_BLUE, BLUE_BLOSSOM_SAPLING,true);
+    public static final BlockEntry<BlossomLeavesBlock> LAVENDER_BLOSSOM_LEAVES = makeBlossomLeavesBlock("lavender", "Serene", MapColor.COLOR_PINK, LAVENDER_BLOSSOM_SAPLING,true);
+    public static final BlockEntry<BlossomLeavesBlock> ORANGE_BLOSSOM_LEAVES = makeBlossomLeavesBlock("orange", "Warm", MapColor.TERRACOTTA_ORANGE, ORANGE_BLOSSOM_SAPLING,true);
+    public static final BlockEntry<BlossomLeavesBlock> PINK_BLOSSOM_LEAVES = makeBlossomLeavesBlock("pink", "Sweet", MapColor.COLOR_PINK, PINK_BLOSSOM_SAPLING,true);
+    public static final BlockEntry<BlossomLeavesBlock> YELLOW_BLOSSOM_LEAVES = makeBlossomLeavesBlock("yellow", "Sunny", MapColor.COLOR_YELLOW, YELLOW_BLOSSOM_SAPLING,true);
+    public static final BlockEntry<BlossomLeavesBlock> RED_BLOSSOM_LEAVES = makeBlossomLeavesBlock("red", "Fiery", MapColor.COLOR_RED, RED_BLOSSOM_SAPLING,true);
 
     // Blossom Logs
     public static final BlockEntry<RotatedPillarBlock> BLOSSOM_LOG = makeLogBlock("blossom", MapColor.COLOR_RED, MapColor.COLOR_BROWN, QookTags.QookItemTags.BLOSSOM_LOGS, true);
@@ -169,13 +181,8 @@ public class QookBlocks {
     // Vertical Blossom Planks
     public static final BlockEntry<Block> VERTICAL_BLOSSOM_PLANKS = makeVerticalPlanksBlock("blossom", MapColor.COLOR_RED, true);
 
-    // Blossom Saplings
-    public static final BlockEntry<SaplingBlock> BLUE_BLOSSOM_SAPLING = makeSaplingBlock("blue", "Frosty", MapColor.COLOR_LIGHT_BLUE, new AbstractBlossomTreeGrower("blue"));
-    public static final BlockEntry<SaplingBlock> LAVENDER_BLOSSOM_SAPLING = makeSaplingBlock("lavender", "Serene", MapColor.COLOR_PINK, new AbstractBlossomTreeGrower("lavender"));
-    public static final BlockEntry<SaplingBlock> ORANGE_BLOSSOM_SAPLING = makeSaplingBlock("orange", "Warm", MapColor.TERRACOTTA_ORANGE, new AbstractBlossomTreeGrower("orange"));
-    public static final BlockEntry<SaplingBlock> PINK_BLOSSOM_SAPLING = makeSaplingBlock("pink", "Sweet", MapColor.COLOR_PINK, new AbstractBlossomTreeGrower("pink"));
-    public static final BlockEntry<SaplingBlock> YELLOW_BLOSSOM_SAPLING = makeSaplingBlock("yellow", "Sunny", MapColor.COLOR_YELLOW, new AbstractBlossomTreeGrower("yellow"));
-    public static final BlockEntry<SaplingBlock> RED_BLOSSOM_SAPLING = makeSaplingBlock("red", "Fiery", MapColor.COLOR_RED, new AbstractBlossomTreeGrower("red"));
+
+
 
 
 
@@ -192,7 +199,52 @@ public class QookBlocks {
 
 
 
-    static BlockEntry<SaplingBlock> makeSaplingBlock(String color, String name, MapColor mapColor, AbstractTreeGrower treeGrower) {
+    static BlockEntry<SaplingBlock> makeSaplingBlock(String name, MapColor mapColor, AbstractTreeGrower treeGrower) {
+        String capitalizedName = name.substring(0, 1).toUpperCase() + name.substring(1);
+
+        return REGISTRATE.block(name + "_sapling" , p -> new SaplingBlock(treeGrower, p))
+                .initialProperties(() -> Blocks.OAK_SAPLING)
+                .properties(p -> p
+                        .mapColor(mapColor)
+                )
+                .tag(BlockTags.SAPLINGS)
+                .addLayer(() -> RenderType::cutout)
+                .blockstate((c, p) -> p.simpleBlock(c.get(), p.models().cross(c.getName(), p.blockTexture(c.get()))))
+                .lang(capitalizedName + " Sapling")
+                .item()
+                .tag(ItemTags.SAPLINGS)
+                .model((c, p) -> p.blockSprite(c))
+                .build()
+                .register();
+    }
+
+    private static BlockEntry<LeavesBlock> makeLeavesBlock(String name, MapColor mapColor, BlockEntry<SaplingBlock> drop, boolean flammable) {
+        String capitalizedName = name.substring(0, 1).toUpperCase() + name.substring(1);
+
+        return REGISTRATE.block(name + "_leaves" , LeavesBlock::new)
+                .properties(p -> p
+                        .mapColor(mapColor)
+                        .strength(0.2F)
+                        .randomTicks()
+                        .sound(SoundType.GRASS)
+                        .noOcclusion()
+                        .isValidSpawn(BlockStateHelper.INVALID_SPAWN)
+                        .isSuffocating(BlockStateHelper.NEVER_PREDICATE)
+                        .isViewBlocking(BlockStateHelper.NEVER_PREDICATE)
+                )
+                .addLayer(() -> RenderType::cutoutMipped)
+                .loot((loot, block) -> loot.add(block, loot.createLeavesDrops(block, drop.get(),
+                        // Rates
+                        0.0046875f, 0.00520833337f, 0.005859375f, 0.00781250025f, 0.01875f
+                )))
+                .onRegister(flammable ? c -> FlammableBlockRegistry.getDefaultInstance().add(c, 30, 60) : null)
+                .lang(capitalizedName + " Leaves")
+                .item()
+                .build()
+                .register();
+    }
+
+    static BlockEntry<SaplingBlock> makeBlossomSaplingBlock(String color, String name, MapColor mapColor, AbstractTreeGrower treeGrower) {
         return REGISTRATE.block(color + "_blossom_sapling" , p -> new SaplingBlock(treeGrower, p))
                 .initialProperties(() -> Blocks.OAK_SAPLING)
                 .properties(p -> p
@@ -209,29 +261,7 @@ public class QookBlocks {
                 .register();
     }
 
-    private static BlockEntry<LeavesBlock> makeLeavesBlock(String name, MapColor mapColor, boolean flammable) {
-        String capitalizedName = name.substring(0, 1).toUpperCase() + name.substring(1);
-
-        return REGISTRATE.block(name + "_leaves" , LeavesBlock::new)
-                .properties(p -> p
-                        .mapColor(mapColor)
-                        .strength(0.2F)
-                        .randomTicks()
-                        .sound(SoundType.GRASS)
-                        .noOcclusion()
-                        .isValidSpawn(BlockStateHelper.INVALID_SPAWN)
-                        .isSuffocating(BlockStateHelper.NEVER_PREDICATE)
-                        .isViewBlocking(BlockStateHelper.NEVER_PREDICATE)
-                )
-                .addLayer(() -> RenderType::cutoutMipped)
-                .onRegister(flammable ? c -> FlammableBlockRegistry.getDefaultInstance().add(c, 30, 60) : null)
-                .lang(capitalizedName + " Leaves")
-                .item()
-                .build()
-                .register();
-    }
-
-    private static BlockEntry<BlossomLeavesBlock> makeBlossomLeavesBlock(String color, String name, MapColor mapColor, boolean flammable) {
+    private static BlockEntry<BlossomLeavesBlock> makeBlossomLeavesBlock(String color, String name, MapColor mapColor, BlockEntry<SaplingBlock> drop, boolean flammable) {
         return REGISTRATE.block(color + "_blossom_leaves" , BlossomLeavesBlock::new)
                 .properties(p -> p
                         .mapColor(mapColor)
@@ -244,6 +274,10 @@ public class QookBlocks {
                         .isViewBlocking(BlockStateHelper.NEVER_PREDICATE)
                 )
                 .addLayer(() -> RenderType::cutoutMipped)
+                .loot((loot, block) -> loot.add(block, loot.createLeavesDrops(block, drop.get(),
+                        // Rates
+                        0.0046875f, 0.00520833337f, 0.005859375f, 0.00781250025f, 0.01875f
+                )))
                 .onRegister(flammable ? c -> FlammableBlockRegistry.getDefaultInstance().add(c, 30, 60) : null)
                 .lang(name + " Blossom Leaves")
                 .item()

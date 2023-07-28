@@ -3,7 +3,7 @@ package dev.ithundxr.qook;
 import com.tterrag.registrate.Registrate;
 import dev.ithundxr.qook.datagen.lang.LangMerger;
 import dev.ithundxr.qook.datagen.lang.QookLangPartials;
-import dev.ithundxr.qook.datagen.recipe.QookRecipeGen;
+import dev.ithundxr.qook.datagen.recipe.QookRecipeGenerator;
 import dev.ithundxr.qook.datagen.world.QookWorldGenerator;
 import dev.ithundxr.qook.util.Utils;
 import net.fabricmc.api.ModInitializer;
@@ -21,7 +21,6 @@ public class Qook implements ModInitializer {
 
     public static final Registrate REGISTRATE = Registrate.create(MOD_ID);
 
-
     @Override
     public void onInitialize() {
         ModSetup.register();
@@ -37,7 +36,7 @@ public class Qook implements ModInitializer {
         // Lang Merger
         pack.addProvider((FabricDataOutput output) -> new LangMerger(output, MOD_ID, NAME, QookLangPartials.values()));
         // Recipe Generator
-        pack.addProvider(QookRecipeGen::new);
+        pack.addProvider(QookRecipeGenerator::new);
         // World Generator
         pack.addProvider(QookWorldGenerator::new);
     }

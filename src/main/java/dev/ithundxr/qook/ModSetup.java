@@ -1,6 +1,5 @@
 package dev.ithundxr.qook;
 
-import dev.ithundxr.qook.datagen.world.QookWorldGenerator;
 import dev.ithundxr.qook.registry.*;
 import dev.ithundxr.qook.world.gen.QookWorldGeneration;
 
@@ -13,7 +12,7 @@ public class ModSetup {
         // Blocks & Items
         QookBlocks.register();
         QookItems.register();
-
+        
         // Tags
         QookTags.register();
 

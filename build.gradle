@@ -8,6 +8,7 @@ group = maven_group
 
 repositories {
     maven { url = 'https://maven.parchmentmc.org' } // Parchment Mappings
+    maven { url = 'https://maven.minecraftforge.net/' } // TerraBlender
     maven { url = "https://maven.quiltmc.org/repository/release" } // Quilt Mappings
     maven { url = "https://mvn.devos.one/snapshots/" } // Registrate Fabric
     maven { url = "https://jitpack.io/" } // Mixin Extras
@@ -22,14 +23,15 @@ dependencies {
         it.parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
         it.officialMojangMappings { nameSyntheticMembers = false }
     })
-    //mappings("net.fabricmc:yarn:${yarn_mappings}:v2") // Mappings
 
     modImplementation "net.fabricmc:fabric-loader:${loader_version}" // Fabric Loader
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}" // Fabric API
 
     modImplementation(include("com.tterrag.registrate_fabric:Registrate:${registrate_version}")) // Registrate
 
+    // Disabled since using it throws a Weird CreativeModeTab mixin apply error
     //modLocalRuntime "dev.emi:emi-fabric:${emi_version}" // EMI
+
     modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}" // REI
 }
 

@@ -5,6 +5,7 @@ import dev.ithundxr.qook.Qook;
 import dev.ithundxr.qook.block.BlossomLeavesBlock;
 import dev.ithundxr.qook.registry.QookBlocks;
 import net.minecraft.core.Holder;
+import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -35,14 +36,21 @@ public class QookPlacedFeatures {
     public static final ResourceKey<PlacedFeature> PINK_BLOSSOM_PLACED_KEY = registerKey("pink_blossom_placed");
     public static final ResourceKey<PlacedFeature> YELLOW_BLOSSOM_PLACED_KEY = registerKey("yellow_blossom_placed");
     public static final ResourceKey<PlacedFeature> RED_BLOSSOM_PLACED_KEY = registerKey("red_blossom_placed");
+    public static final ResourceKey<PlacedFeature> ANCIENT_PLACED_KEY = registerKey("ancient_placed");
+
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
-        registerPlacedBlossomTree(context, BLUE_BLOSSOM_PLACED_KEY, QookConfiguredFeatures.BLUE_BLOSSOM_KEY, QookBlocks.BLUE_BLOSSOM_SAPLING);
-        registerPlacedBlossomTree(context, LAVENDER_BLOSSOM_PLACED_KEY, QookConfiguredFeatures.LAVENDER_BLOSSOM_KEY, QookBlocks.LAVENDER_BLOSSOM_SAPLING);
-        registerPlacedBlossomTree(context, ORANGE_BLOSSOM_PLACED_KEY, QookConfiguredFeatures.ORANGE_BLOSSOM_KEY, QookBlocks.ORANGE_BLOSSOM_SAPLING);
-        registerPlacedBlossomTree(context, PINK_BLOSSOM_PLACED_KEY, QookConfiguredFeatures.PINK_BLOSSOM_KEY, QookBlocks.PINK_BLOSSOM_SAPLING);
-        registerPlacedBlossomTree(context, YELLOW_BLOSSOM_PLACED_KEY, QookConfiguredFeatures.YELLOW_BLOSSOM_KEY, QookBlocks.YELLOW_BLOSSOM_SAPLING);
-        registerPlacedBlossomTree(context, RED_BLOSSOM_PLACED_KEY, QookConfiguredFeatures.RED_BLOSSOM_KEY, QookBlocks.RED_BLOSSOM_SAPLING);
+        var configuredFeatureRegistryEntryLookup = context.lookup(Registries.CONFIGURED_FEATURE);
+
+        registerPlacedBlossomTree(context, BLUE_BLOSSOM_PLACED_KEY, configuredFeatureRegistryEntryLookup, QookConfiguredFeatures.BLUE_BLOSSOM_KEY, QookBlocks.BLUE_BLOSSOM_SAPLING);
+        registerPlacedBlossomTree(context, LAVENDER_BLOSSOM_PLACED_KEY, configuredFeatureRegistryEntryLookup, QookConfiguredFeatures.LAVENDER_BLOSSOM_KEY, QookBlocks.LAVENDER_BLOSSOM_SAPLING);
+        registerPlacedBlossomTree(context, ORANGE_BLOSSOM_PLACED_KEY, configuredFeatureRegistryEntryLookup, QookConfiguredFeatures.ORANGE_BLOSSOM_KEY, QookBlocks.ORANGE_BLOSSOM_SAPLING);
+        registerPlacedBlossomTree(context, PINK_BLOSSOM_PLACED_KEY, configuredFeatureRegistryEntryLookup, QookConfiguredFeatures.PINK_BLOSSOM_KEY, QookBlocks.PINK_BLOSSOM_SAPLING);
+        registerPlacedBlossomTree(context, YELLOW_BLOSSOM_PLACED_KEY, configuredFeatureRegistryEntryLookup, QookConfiguredFeatures.YELLOW_BLOSSOM_KEY, QookBlocks.YELLOW_BLOSSOM_SAPLING);
+        registerPlacedBlossomTree(context, RED_BLOSSOM_PLACED_KEY, configuredFeatureRegistryEntryLookup, QookConfiguredFeatures.RED_BLOSSOM_KEY, QookBlocks.RED_BLOSSOM_SAPLING);
+
+//        register(context, ANCIENT_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(QookConfiguredFeatures.ANCIENT_KEY),
+//                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 2), QookBlocks.ANCIENT_SAPLING.get()));
     }
 
     public static ResourceKey<PlacedFeature> registerKey(String name) {
@@ -60,11 +68,8 @@ public class QookPlacedFeatures {
         register(context, key, configuration, List.of(modifiers));
     }
 
-    private static void registerPlacedBlossomTree(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> placedKey, ResourceKey<ConfiguredFeature<?, ?>> configuredKey, BlockEntry<SaplingBlock> saplingBlock) {
-        var configuredFeatureRegistryEntryLookup = context.lookup(Registries.CONFIGURED_FEATURE);
-
+    private static void registerPlacedBlossomTree(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> placedKey, HolderGetter<ConfiguredFeature<?, ?>> configuredFeatureRegistryEntryLookup, ResourceKey<ConfiguredFeature<?, ?>> configuredKey, BlockEntry<SaplingBlock> saplingBlock) {
         register(context, placedKey, configuredFeatureRegistryEntryLookup.getOrThrow(configuredKey),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 2), saplingBlock.get()));
-
     }
 }

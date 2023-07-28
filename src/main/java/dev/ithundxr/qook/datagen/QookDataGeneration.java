@@ -9,7 +9,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator.Pack;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
-import org.apache.http.config.RegistryBuilder;
 
 public class QookDataGeneration implements DataGeneratorEntrypoint {
     @Override
