@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "qook:block/azalea_slabs"
+    },
+    "type=double": {
+      "model": "qook:block/azalea_planks"
+    },
+    "type=top": {
+      "model": "qook:block/azalea_slabs_top"
+    }
+  }
+}

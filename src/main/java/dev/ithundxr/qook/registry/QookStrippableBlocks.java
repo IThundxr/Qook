@@ -9,6 +9,10 @@ public class QookStrippableBlocks {
         StrippableBlockRegistry.register(QookBlocks.ANCIENT_LOG.get(), QookBlocks.STRIPPED_ANCIENT_LOG.get());
         StrippableBlockRegistry.register(QookBlocks.ANCIENT_WOOD.get(), QookBlocks.STRIPPED_ANCIENT_WOOD.get());
 
+        // Azalea
+        StrippableBlockRegistry.register(QookBlocks.AZALEA_LOG.get(), QookBlocks.STRIPPED_AZALEA_LOG.get());
+        StrippableBlockRegistry.register(QookBlocks.AZALEA_WOOD.get(), QookBlocks.STRIPPED_AZALEA_WOOD.get());
+
         // Blossom
         StrippableBlockRegistry.register(QookBlocks.BLOSSOM_LOG.get(), QookBlocks.STRIPPED_BLOSSOM_LOG.get());
         StrippableBlockRegistry.register(QookBlocks.BLOSSOM_WOOD.get(), QookBlocks.STRIPPED_BLOSSOM_WOOD.get());

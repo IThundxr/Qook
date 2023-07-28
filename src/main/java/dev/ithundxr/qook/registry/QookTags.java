@@ -10,6 +10,8 @@ public class QookTags {
     public static class QookItemTags {
         public static final TagKey<Item> BLOSSOM_LOGS = create("blossom_logs");
         public static final TagKey<Item> ANCIENT_LOGS = create("ancient_logs");
+        public static final TagKey<Item> AZALEA_LOGS = create("azalea_logs");
+
 
         private static TagKey<Item> create(String name) {
             return TagKey.create(Registries.ITEM, Qook.asResource(name));

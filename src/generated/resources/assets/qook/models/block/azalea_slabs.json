@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "qook:block/azalea_planks",
+    "side": "qook:block/azalea_planks",
+    "top": "qook:block/azalea_planks"
+  }
+}

@@ -58,6 +58,38 @@ public class QookRecipeGen extends QookRecipeProvider {
 
     VERTICAL_ANCIENT_PLANKS = createVerticalPlanksRecipe(QookBlocks.VERTICAL_ANCIENT_PLANKS, QookBlocks.ANCIENT_PLANKS),
 
+
+    // Azalea
+
+    AZALEA_WOOD = createWoodRecipe(QookBlocks.AZALEA_WOOD, QookBlocks.AZALEA_LOG),
+
+    STRIPPED_AZALEA_WOOD = createWoodRecipe(QookBlocks.STRIPPED_AZALEA_WOOD, QookBlocks.STRIPPED_AZALEA_LOG),
+
+    AZALEA_PLANKS = createPlanksRecipe(QookBlocks.AZALEA_PLANKS, QookBlocks.AZALEA_LOG, QookTags.QookItemTags.AZALEA_LOGS),
+
+    AZALEA_PLANKS_FROM_VERT = createVerticalPlanksintoPlanksRecipe(QookBlocks.AZALEA_PLANKS, QookBlocks.VERTICAL_AZALEA_PLANKS),
+
+    AZALEA_SLABS = createSlabsRecipe(QookBlocks.AZALEA_SLABS, QookBlocks.AZALEA_PLANKS),
+
+    AZALEA_STAIRS = createStairsRecipe(QookBlocks.AZALEA_STAIRS, QookBlocks.AZALEA_PLANKS),
+
+    AZALEA_FENCE = createFenceRecipe(QookBlocks.AZALEA_FENCE, QookBlocks.AZALEA_PLANKS),
+
+    AZALEA_FENCE_GATE = createFenceGateRecipe(QookBlocks.AZALEA_FENCE_GATE, QookBlocks.AZALEA_PLANKS),
+
+    AZALEA_DOOR = createDoorRecipe(QookBlocks.AZALEA_DOOR, QookBlocks.AZALEA_PLANKS),
+
+    AZALEA_TRAPDOOR = createTrapDoorRecipe(QookBlocks.AZALEA_TRAPDOOR, QookBlocks.AZALEA_PLANKS),
+
+    AZALEA_BUTTON = createButtonRecipe(QookBlocks.AZALEA_BUTTON, QookBlocks.AZALEA_PLANKS),
+
+    AZALEA_PRESSURE_PLATE = createPressurePlateRecipe(QookBlocks.AZALEA_PRESSURE_PLATE, QookBlocks.AZALEA_PLANKS),
+
+    AZALEA_LADDER = createLadderRecipe(QookBlocks.AZALEA_LADDER, QookBlocks.AZALEA_PLANKS),
+
+    VERTICAL_AZALEA_PLANKS = createVerticalPlanksRecipe(QookBlocks.VERTICAL_AZALEA_PLANKS, QookBlocks.AZALEA_PLANKS),
+
+
     // Blossom
 
     BLOSSOM_WOOD = createWoodRecipe(QookBlocks.BLOSSOM_WOOD, QookBlocks.BLOSSOM_LOG),

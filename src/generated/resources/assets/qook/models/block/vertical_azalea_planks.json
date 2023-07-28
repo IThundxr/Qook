@@ -1,0 +1,6 @@
+{
+  "parent": "qook:block/vertical_planks",
+  "textures": {
+    "all": "qook:block/azalea_planks"
+  }
+}

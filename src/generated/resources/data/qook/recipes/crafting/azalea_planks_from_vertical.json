@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "qook:vertical_azalea_planks"
+    }
+  },
+  "pattern": [
+    "   ",
+    " B "
+  ],
+  "result": {
+    "item": "qook:azalea_planks"
+  },
+  "show_notification": true
+}

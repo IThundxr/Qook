@@ -26,46 +26,90 @@ import java.util.function.Supplier;
 public class QookBlocks {
     private static final Registrate REGISTRATE = Qook.REGISTRATE;
 
+
     // Ancient Logs
-    public static final BlockEntry<RotatedPillarBlock> ANCIENT_LOG = makeLogBlock("ancient", MapColor.COLOR_RED, MapColor.COLOR_BROWN, QookTags.QookItemTags.ANCIENT_LOGS, true);
-    public static final BlockEntry<RotatedPillarBlock> STRIPPED_ANCIENT_LOG = makeStrippedLogBlock("ancient", MapColor.COLOR_RED, QookTags.QookItemTags.ANCIENT_LOGS, true);
+    public static final BlockEntry<RotatedPillarBlock> ANCIENT_LOG = makeLogBlock("ancient", MapColor.TERRACOTTA_WHITE, MapColor.TERRACOTTA_WHITE, QookTags.QookItemTags.ANCIENT_LOGS, true);
+    public static final BlockEntry<RotatedPillarBlock> STRIPPED_ANCIENT_LOG = makeStrippedLogBlock("ancient", MapColor.TERRACOTTA_WHITE, QookTags.QookItemTags.ANCIENT_LOGS, true);
 
     // Ancient Woods
     public static final BlockEntry<RotatedPillarBlock> ANCIENT_WOOD = makeWoodBlock("ancient", MapColor.COLOR_BROWN, QookTags.QookItemTags.ANCIENT_LOGS, true);
-    public static final BlockEntry<RotatedPillarBlock> STRIPPED_ANCIENT_WOOD = makeStrippedWoodBlock("ancient", MapColor.COLOR_RED, QookTags.QookItemTags.ANCIENT_LOGS, true);
+    public static final BlockEntry<RotatedPillarBlock> STRIPPED_ANCIENT_WOOD = makeStrippedWoodBlock("ancient", MapColor.TERRACOTTA_WHITE, QookTags.QookItemTags.ANCIENT_LOGS, true);
 
     // Ancient Planks
-    public static final BlockEntry<Block> ANCIENT_PLANKS = makePlanksBlock("ancient", MapColor.COLOR_RED, true);
+    public static final BlockEntry<Block> ANCIENT_PLANKS = makePlanksBlock("ancient", MapColor.TERRACOTTA_WHITE, true);
 
     // Ancient Slabs
-    public static final BlockEntry<SlabBlock> ANCIENT_SLABS = makeSlabsBlock("ancient", MapColor.COLOR_RED, true);
+    public static final BlockEntry<SlabBlock> ANCIENT_SLABS = makeSlabsBlock("ancient", MapColor.TERRACOTTA_WHITE, true);
 
     // Ancient Stairs
-    public static final BlockEntry<StairBlock> ANCIENT_STAIRS = makeStairsBlock("ancient", MapColor.COLOR_RED, true);
+    public static final BlockEntry<StairBlock> ANCIENT_STAIRS = makeStairsBlock("ancient", MapColor.TERRACOTTA_WHITE, true);
 
     // Ancient Fence
-    public static final BlockEntry<FenceBlock> ANCIENT_FENCE = makeFenceBlock("ancient", MapColor.COLOR_RED, true);
+    public static final BlockEntry<FenceBlock> ANCIENT_FENCE = makeFenceBlock("ancient", MapColor.TERRACOTTA_WHITE, true);
 
     // Ancient Fence Gate
-    public static final BlockEntry<FenceGateBlock> ANCIENT_FENCE_GATE = makeFenceGateBlock("ancient", MapColor.COLOR_RED, true);
+    public static final BlockEntry<FenceGateBlock> ANCIENT_FENCE_GATE = makeFenceGateBlock("ancient", MapColor.TERRACOTTA_WHITE, true);
 
     // Ancient Door
-    public static final BlockEntry<DoorBlock> ANCIENT_DOOR = makeDoorBlockWithRenderType("ancient", MapColor.COLOR_RED, true, RenderType::cutout);
+    public static final BlockEntry<DoorBlock> ANCIENT_DOOR = makeDoorBlockWithRenderType("ancient", MapColor.TERRACOTTA_WHITE, true, RenderType::cutout);
 
     // Ancient Trapdoor
-    public static final BlockEntry<TrapDoorBlock> ANCIENT_TRAPDOOR = makeTrapDoorBlockWithRenderType("ancient", MapColor.COLOR_RED, true, RenderType::cutout);
+    public static final BlockEntry<TrapDoorBlock> ANCIENT_TRAPDOOR = makeTrapDoorBlockWithRenderType("ancient", MapColor.TERRACOTTA_WHITE, true, RenderType::cutout);
 
     // Ancient Button
-    public static final BlockEntry<ButtonBlock> ANCIENT_BUTTON = makeButtonBlock("ancient", MapColor.COLOR_RED);
+    public static final BlockEntry<ButtonBlock> ANCIENT_BUTTON = makeButtonBlock("ancient", MapColor.TERRACOTTA_WHITE);
 
     // Ancient Pressure Plate
-    public static final BlockEntry<PressurePlateBlock> ANCIENT_PRESSURE_PLATE = makePressurePlateBlock("ancient", MapColor.COLOR_RED, true);
+    public static final BlockEntry<PressurePlateBlock> ANCIENT_PRESSURE_PLATE = makePressurePlateBlock("ancient", MapColor.TERRACOTTA_WHITE, true);
 
     // Ancient Ladder
-    public static final BlockEntry<LadderBlock> ANCIENT_LADDER = makeLadderBlock("ancient", MapColor.COLOR_RED);
+    public static final BlockEntry<LadderBlock> ANCIENT_LADDER = makeLadderBlock("ancient", MapColor.TERRACOTTA_WHITE);
 
     // Vertical Ancient Planks
-    public static final BlockEntry<Block> VERTICAL_ANCIENT_PLANKS = makeVerticalPlanksBlock("ancient", MapColor.COLOR_RED, true);
+    public static final BlockEntry<Block> VERTICAL_ANCIENT_PLANKS = makeVerticalPlanksBlock("ancient", MapColor.TERRACOTTA_WHITE, true);
+
+
+
+    // Azalea Logs
+    public static final BlockEntry<RotatedPillarBlock> AZALEA_LOG = makeLogBlock("azalea", MapColor.COLOR_LIGHT_GREEN, MapColor.COLOR_BROWN, QookTags.QookItemTags.AZALEA_LOGS, true);
+    public static final BlockEntry<RotatedPillarBlock> STRIPPED_AZALEA_LOG = makeStrippedLogBlock("azalea", MapColor.COLOR_LIGHT_GREEN, QookTags.QookItemTags.AZALEA_LOGS, true);
+
+    // Azalea Woods
+    public static final BlockEntry<RotatedPillarBlock> AZALEA_WOOD = makeWoodBlock("azalea", MapColor.COLOR_BROWN, QookTags.QookItemTags.AZALEA_LOGS, true);
+    public static final BlockEntry<RotatedPillarBlock> STRIPPED_AZALEA_WOOD = makeStrippedWoodBlock("azalea", MapColor.COLOR_LIGHT_GREEN, QookTags.QookItemTags.AZALEA_LOGS, true);
+
+    // Azalea Planks
+    public static final BlockEntry<Block> AZALEA_PLANKS = makePlanksBlock("azalea", MapColor.COLOR_LIGHT_GREEN, true);
+
+    // Azalea Slabs
+    public static final BlockEntry<SlabBlock> AZALEA_SLABS = makeSlabsBlock("azalea", MapColor.COLOR_LIGHT_GREEN, true);
+
+    // Azalea Stairs
+    public static final BlockEntry<StairBlock> AZALEA_STAIRS = makeStairsBlock("azalea", MapColor.COLOR_LIGHT_GREEN, true);
+
+    // Azalea Fence
+    public static final BlockEntry<FenceBlock> AZALEA_FENCE = makeFenceBlock("azalea", MapColor.COLOR_LIGHT_GREEN, true);
+
+    // Azalea Fence Gate
+    public static final BlockEntry<FenceGateBlock> AZALEA_FENCE_GATE = makeFenceGateBlock("azalea", MapColor.COLOR_LIGHT_GREEN, true);
+
+    // Azalea Door
+    public static final BlockEntry<DoorBlock> AZALEA_DOOR = makeDoorBlock("azalea", MapColor.COLOR_LIGHT_GREEN, true);
+
+    // Azalea Trapdoor
+    public static final BlockEntry<TrapDoorBlock> AZALEA_TRAPDOOR = makeTrapDoorBlock("azalea", MapColor.COLOR_LIGHT_GREEN, true);
+
+    // Azalea Button
+    public static final BlockEntry<ButtonBlock> AZALEA_BUTTON = makeButtonBlock("azalea", MapColor.COLOR_LIGHT_GREEN);
+
+    // Azalea Pressure Plate
+    public static final BlockEntry<PressurePlateBlock> AZALEA_PRESSURE_PLATE = makePressurePlateBlock("azalea", MapColor.COLOR_LIGHT_GREEN, true);
+
+    // Azalea Ladder
+    public static final BlockEntry<LadderBlock> AZALEA_LADDER = makeLadderBlock("azalea", MapColor.COLOR_LIGHT_GREEN);
+
+    // Vertical AzaleaPlanks
+    public static final BlockEntry<Block> VERTICAL_AZALEA_PLANKS = makeVerticalPlanksBlock("azalea", MapColor.COLOR_LIGHT_GREEN, true);
 
 
 
