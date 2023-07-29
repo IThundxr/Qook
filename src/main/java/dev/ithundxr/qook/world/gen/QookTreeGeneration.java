@@ -21,8 +21,8 @@ public class QookTreeGeneration {
         addBlossomTree(QookPlacedFeatures.YELLOW_BLOSSOM_PLACED_KEY, Tags.Biomes.IS_PLAINS);
         addBlossomTree(QookPlacedFeatures.RED_BLOSSOM_PLACED_KEY, BiomeTags.IS_BADLANDS);
 
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.FLOWER_FOREST),
-                GenerationStep.Decoration.VEGETAL_DECORATION, QookPlacedFeatures.ANCIENT_PLACED_KEY);
+//        BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.FLOWER_FOREST),
+//                GenerationStep.Decoration.VEGETAL_DECORATION, QookPlacedFeatures.ANCIENT_PLACED_KEY);
     }
 
     public static void addBlossomTree(ResourceKey<PlacedFeature> key, TagKey<Biome> biomeTagKey) {

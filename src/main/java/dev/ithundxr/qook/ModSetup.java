@@ -1,7 +1,9 @@
 package dev.ithundxr.qook;
 
 import dev.ithundxr.qook.registry.*;
+import dev.ithundxr.qook.world.QookConfiguredFeatures;
 import dev.ithundxr.qook.world.gen.QookWorldGeneration;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
 
 public class ModSetup {
     public static void register() {
@@ -24,5 +26,7 @@ public class ModSetup {
 
         // Register Strippable Blocks
         QookStrippableBlocks.register();
+
+        ServerWorldEvents.LOAD.register((server, level) -> QookConfiguredFeatures.overrideAzaleaTrunk(server));
     }
 }

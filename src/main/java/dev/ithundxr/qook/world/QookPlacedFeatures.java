@@ -36,7 +36,7 @@ public class QookPlacedFeatures {
     public static final ResourceKey<PlacedFeature> PINK_BLOSSOM_PLACED_KEY = registerKey("pink_blossom_placed");
     public static final ResourceKey<PlacedFeature> YELLOW_BLOSSOM_PLACED_KEY = registerKey("yellow_blossom_placed");
     public static final ResourceKey<PlacedFeature> RED_BLOSSOM_PLACED_KEY = registerKey("red_blossom_placed");
-    public static final ResourceKey<PlacedFeature> ANCIENT_PLACED_KEY = registerKey("ancient_placed");
+//    public static final ResourceKey<PlacedFeature> ANCIENT_PLACED_KEY = registerKey("ancient_placed");
 
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
